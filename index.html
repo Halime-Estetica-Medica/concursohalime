@@ -378,11 +378,10 @@ function pageRegister(){
   page.appendChild(logoHeader());
 
   // Local state — no re-render on typing
-  const LF={nombre:"",apellido:"",afiliados:[""]};
-  const afilInputs=[];
+  const LF={nombre:"",apellido:"",afiliados:[]};
 
   page.appendChild(el("h2",{cls:"reg-title"},"Registrar participación"));
-  page.appendChild(el("p",{cls:"reg-sub"},"Ingresá tu nombre completo y el de todas las personas que votaron en Google por vos."));
+  page.appendChild(el("p",{cls:"reg-sub"},"Ingresá tu nombre completo para registrar tu participación y obtener tu link personal para compartir."));
 
   const card=el("div",{cls:"card"});
 
@@ -401,54 +400,16 @@ function pageRegister(){
   fgApellido.appendChild(inpApellido);card.appendChild(fgApellido);
 
   // — Afiliados —
-  const afilSection=el("div",{cls:"afil-section"});
-  afilSection.appendChild(el("div",{cls:"section-title"},"Personas que votaron por vos"));
 
-  const afilList=el("div",{});
-
-  function renderAfiliados(){
-    afilList.innerHTML="";
-    afilInputs.length=0;
-    LF.afiliados.forEach((val,i)=>{
-      const row=el("div",{cls:"afiliado-row"});
-      row.appendChild(el("span",{cls:"afiliado-num"},String(i+1)));
-      const inp=el("input",{cls:"finp",type:"text",placeholder:"Nombre y apellido"});
-      inp.value=val;
-      inp.addEventListener("input",ev=>LF.afiliados[i]=ev.target.value);
-      afilInputs.push(inp);
-      row.appendChild(inp);
-      if(LF.afiliados.length>1){
-        const del=el("button",{cls:"btn-del"},"×");
-        del.addEventListener("click",()=>{LF.afiliados.splice(i,1);renderAfiliados()});
-        row.appendChild(del);
-      }
-      afilList.appendChild(row);
-    });
-    // Focus last input
-    setTimeout(()=>{if(afilInputs.length)afilInputs[afilInputs.length-1].focus()},30);
-  }
-  renderAfiliados();
-  afilSection.appendChild(afilList);
-
-  const addBtn=el("button",{cls:"btn-add"},"+ Agregar otra persona");
-  addBtn.addEventListener("click",()=>{LF.afiliados.push("");renderAfiliados()});
-  afilSection.appendChild(addBtn);
-  card.appendChild(afilSection);
 
   // — Submit —
-  const submitBtn=el("button",{cls:"btn-primary",style:{marginTop:"24px"}},"Registrar y ver mi ranking");
+  const submitBtn=el("button",{cls:"btn-primary",style:{marginTop:"24px"}},"Registrar y obtener mi link");
   submitBtn.addEventListener("click",async()=>{
     // Validate
     if(!LF.nombre.trim()||!LF.apellido.trim()){
       toast("Ingresá tu nombre y apellido completo.");return;
     }
-    const afilValidos=LF.afiliados.filter(a=>a.trim());
-    for(const a of afilValidos){
-      const parts=a.trim().split(" ");
-      if(parts.length<2||!parts[1].trim()){
-        toast("Cada afiliado debe tener nombre y apellido.");return;
-      }
-    }
+    const afilValidos=[];
     submitBtn.textContent="Verificando…";submitBtn.disabled=true;
     try{
       // Check for duplicate apellido
@@ -456,7 +417,7 @@ function pageRegister(){
       const existing=await sbGet("?order=id.asc");
       const duplicate=existing.find(p=>p.apellido&&p.apellido.toLowerCase()===apellidoNorm);
       if(duplicate){
-        submitBtn.textContent="Registrar y ver mi ranking";
+        submitBtn.textContent="Registrar y obtener mi link";
         submitBtn.disabled=false;
         toast("Ya existe un participante con ese apellido.");
         return;
@@ -482,7 +443,7 @@ function pageRegister(){
       set({me,all,page:"ranking",tab:"ranking",loading:false});
       setTimeout(launchConfetti, 200);
     } catch(e){
-      submitBtn.textContent="Registrar y ver mi ranking";
+      submitBtn.textContent="Registrar y obtener mi link";
       submitBtn.disabled=false;
       toast("Error al registrar: "+e.message);
     }
