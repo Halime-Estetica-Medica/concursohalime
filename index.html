@@ -132,6 +132,28 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
   animation:shimmer 3s ease-in-out infinite;
 }
+/* ── CONFIRMAR MI VOTO — unlocked state ── */
+@keyframes pulse-rose{
+  0%,100%{box-shadow:0 4px 20px rgba(194,96,122,.35),0 0 0 0 rgba(194,96,122,.45)}
+  50%{box-shadow:0 8px 32px rgba(194,96,122,.55),0 0 0 10px rgba(194,96,122,0)}
+}
+.btn-confirmar-activo{
+  display:block;width:auto;min-width:200px;margin:10px auto 0;
+  padding:15px 36px;border-radius:var(--r-xl);border:none;
+  background:linear-gradient(135deg,#c2607a,#e8809a,#c9a96e);
+  color:#fff;font-size:15px;font-weight:600;letter-spacing:.4px;
+  cursor:pointer;font-family:'DM Sans',sans-serif;
+  position:relative;overflow:hidden;
+  animation:pulse-rose 2s ease-in-out infinite;
+  transition:opacity .2s,transform .15s;
+  text-align:center;
+}
+.btn-confirmar-activo::after{
+  content:"";position:absolute;top:0;left:0;width:40%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.40),transparent);
+  animation:shimmer 2.2s ease-in-out infinite;
+}
+.btn-confirmar-activo:hover{opacity:.93;transform:translateY(-1px)}
 .disclaimer{font-size:11px;color:var(--soft);text-align:center;line-height:1.7;max-width:320px;margin:20px auto 0;padding:14px 18px;border-top:1px solid var(--nude-dk);border-radius:var(--r)}
 
 /* ── AFILIADO FLOW ── */
@@ -874,14 +896,16 @@ function pageRefInvite(){
   ga.addEventListener("click",()=>{
     setTimeout(()=>{
       localStorage.setItem("halime_ref_voted_"+S.refCode,"1");
-      already.classList.remove("btn-locked");
+      already.className="btn-confirmar-activo";
       already.disabled=false;
+      already.title="";
+      already.textContent="✅  Confirmá tu voto →";
     },800);
   });
   card.appendChild(ga);
 
   // Register button
-  const already=el("button",{cls:"btn-secondary"+(voted?"":" btn-locked"),style:{marginTop:"10px"}},"Confirmar mi voto");
+  const already=el("button",{cls:voted?"btn-confirmar-activo":"btn-secondary btn-locked",style:{marginTop:"10px"}},voted?"✅  Confirmá tu voto →":"Confirmar mi voto");
   already.disabled=!voted;
   if(!voted)already.title="Primero votá en Google";
   already.addEventListener("click",()=>{
