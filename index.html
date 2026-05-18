@@ -132,28 +132,6 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
   background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
   animation:shimmer 3s ease-in-out infinite;
 }
-/* ── CONFIRMAR MI VOTO — unlocked state ── */
-@keyframes pulse-rose{
-  0%,100%{box-shadow:0 4px 20px rgba(194,96,122,.35),0 0 0 0 rgba(194,96,122,.45)}
-  50%{box-shadow:0 8px 32px rgba(194,96,122,.55),0 0 0 10px rgba(194,96,122,0)}
-}
-.btn-confirmar-activo{
-  display:block;width:auto;min-width:200px;margin:10px auto 0;
-  padding:15px 36px;border-radius:var(--r-xl);border:none;
-  background:linear-gradient(135deg,#c2607a,#e8809a,#c9a96e);
-  color:#fff;font-size:15px;font-weight:600;letter-spacing:.4px;
-  cursor:pointer;font-family:'DM Sans',sans-serif;
-  position:relative;overflow:hidden;
-  animation:pulse-rose 2s ease-in-out infinite;
-  transition:opacity .2s,transform .15s;
-  text-align:center;
-}
-.btn-confirmar-activo::after{
-  content:"";position:absolute;top:0;left:0;width:40%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.40),transparent);
-  animation:shimmer 2.2s ease-in-out infinite;
-}
-.btn-confirmar-activo:hover{opacity:.93;transform:translateY(-1px)}
 .disclaimer{font-size:11px;color:var(--soft);text-align:center;line-height:1.7;max-width:320px;margin:20px auto 0;padding:14px 18px;border-top:1px solid var(--nude-dk);border-radius:var(--r)}
 
 /* ── AFILIADO FLOW ── */
@@ -170,6 +148,27 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .ref-done-sub strong{color:var(--rose)}
 .btn-locked{opacity:.4;cursor:not-allowed!important;position:relative}
 .btn-locked::after{content:"🔒";font-size:12px;margin-left:8px}
+@keyframes pulse-rose{
+  0%,100%{box-shadow:0 4px 16px rgba(194,96,122,.3),0 0 0 0 rgba(194,96,122,.4)}
+  50%{box-shadow:0 6px 24px rgba(194,96,122,.5),0 0 0 8px rgba(194,96,122,0)}
+}
+@keyframes shimmer-rose{
+  0%{transform:translateX(-100%) skewX(-15deg)}
+  100%{transform:translateX(250%) skewX(-15deg)}
+}
+.btn-confirm-active{
+  width:100%;max-width:440px;padding:15px;border-radius:var(--r-xl);border:none;
+  background:linear-gradient(135deg,#c87090,#9a3a58)!important;
+  color:#fff!important;font-size:14px;font-weight:500;cursor:pointer;
+  font-family:'DM Sans',sans-serif;letter-spacing:.4px;
+  animation:pulse-rose 2s ease-in-out infinite;
+  position:relative;overflow:hidden;margin-top:10px;
+}
+.btn-confirm-active::after{
+  content:"";position:absolute;top:0;left:0;width:40%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
+  animation:shimmer-rose 2.5s ease-in-out infinite;
+}
 
 /* ── CONFETTI ── */
 .confetti-piece{position:fixed;width:8px;height:8px;top:-10px;border-radius:2px;animation:confetti-fall linear forwards;pointer-events:none;z-index:9999}
@@ -209,6 +208,22 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .adm-date{font-size:10px;color:var(--nude-dk);margin-top:4px}
 .adm-del{padding:4px 10px;border-radius:20px;border:1px solid #f0c0c8;background:transparent;color:#c05060;font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:6px}
 .adm-del:hover{background:#fdf0f0}
+.adm-edit{padding:4px 10px;border-radius:20px;border:1px solid rgba(201,169,110,.4);background:transparent;color:var(--gold);font-size:11px;cursor:pointer;font-family:'DM Sans',sans-serif;margin-top:6px;margin-left:6px}
+.adm-edit:hover{background:rgba(201,169,110,.08)}
+.modal-overlay{position:fixed;inset:0;background:rgba(45,26,36,.5);z-index:100;display:flex;align-items:center;justify-content:center;padding:16px}
+.modal-card{background:#fff;border-radius:var(--r-lg);padding:24px;max-width:420px;width:100%;max-height:80vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+.modal-title{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:500;color:var(--dark);margin-bottom:4px}
+.modal-sub{font-size:12px;color:var(--soft);margin-bottom:18px}
+.modal-afil-row{display:flex;align-items:center;gap:8px;margin-bottom:8px}
+.modal-afil-inp{flex:1;padding:9px 12px;font-size:13px;border:1.5px solid var(--nude-dk);border-radius:var(--r);outline:none;font-family:'DM Sans',sans-serif;color:var(--dark)}
+.modal-afil-inp:focus{border-color:var(--gold)}
+.modal-afil-del{background:none;border:none;color:var(--nude-dk);cursor:pointer;font-size:18px;padding:4px;flex-shrink:0}
+.modal-afil-del:hover{color:var(--rose)}
+.modal-add{display:flex;align-items:center;gap:6px;background:none;border:1.5px dashed var(--nude-dk);color:var(--soft);font-size:12px;padding:8px 14px;border-radius:var(--r);cursor:pointer;width:100%;justify-content:center;margin-top:4px;font-family:'DM Sans',sans-serif}
+.modal-add:hover{border-color:var(--gold);color:var(--gold)}
+.modal-btns{display:flex;gap:8px;margin-top:20px}
+.modal-save{flex:1;padding:12px;border-radius:var(--r-xl);border:none;background:linear-gradient(135deg,#c87090,#9a3a58);color:#fff;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif}
+.modal-cancel{flex:1;padding:12px;border-radius:var(--r-xl);border:1.5px solid var(--nude-dk);background:transparent;color:var(--soft);font-size:14px;cursor:pointer;font-family:'DM Sans',sans-serif}
 </style>
 </head>
 <body>
@@ -840,6 +855,10 @@ function pageAdmin(){
         } catch{toast("Error al eliminar.")}
       });
       info.appendChild(del);
+
+      const editBtn=el("button",{cls:"adm-edit"},"✏ Editar afiliados");
+      editBtn.addEventListener("click",()=>showEditModal(p));
+      info.appendChild(editBtn);
       row.appendChild(info);
 
       const pts=el("div",{cls:"adm-pts"});
@@ -896,16 +915,16 @@ function pageRefInvite(){
   ga.addEventListener("click",()=>{
     setTimeout(()=>{
       localStorage.setItem("halime_ref_voted_"+S.refCode,"1");
-      already.className="btn-confirmar-activo";
+      already.className="btn-confirm-active";
+      already.textContent="✓  Confirmar mi voto";
       already.disabled=false;
-      already.title="";
-      already.textContent="✅  Confirmá tu voto →";
+      already.style.marginTop="10px";
     },800);
   });
   card.appendChild(ga);
 
   // Register button
-  const already=el("button",{cls:voted?"btn-confirmar-activo":"btn-secondary btn-locked",style:{marginTop:"10px"}},voted?"✅  Confirmá tu voto →":"Confirmar mi voto");
+  const already=el("button",{cls:voted?"btn-confirm-active":"btn-secondary btn-locked",style:{marginTop:"10px"}},voted?"✓  Confirmar mi voto":"Confirmar mi voto");
   already.disabled=!voted;
   if(!voted)already.title="Primero votá en Google";
   already.addEventListener("click",()=>{
@@ -949,6 +968,35 @@ function pageRefRegister(){
       // Add afiliado to owner's record
       const owner=S.refOwner;
       const afilName=LF.nombre.trim()+" "+LF.apellido.trim();
+      const afilNomLow=LF.nombre.trim().toLowerCase();
+      const afilApeLow=LF.apellido.trim().toLowerCase();
+
+      // Check duplicate: same nombre+apellido in any participant or afiliado list
+      const allParts=await sbGet("?order=id.asc");
+
+      // Check if already a base participant
+      const isDupBase=allParts.find(p=>
+        p.nombre.toLowerCase()===afilNomLow && p.apellido.toLowerCase()===afilApeLow
+      );
+      if(isDupBase){
+        btn.textContent="Registrar mi voto";btn.disabled=false;
+        toast("Este nombre ya está registrado como participante.");return;
+      }
+
+      // Check if already an afiliado of anyone
+      const isDupAfil=allParts.find(p=>
+        (p.afiliados||[]).some(a=>{
+          const parts=a.trim().split(" ");
+          const aNom=parts[0]?.toLowerCase()||"";
+          const aApe=parts.slice(1).join(" ").toLowerCase()||"";
+          return aNom===afilNomLow && aApe===afilApeLow;
+        })
+      );
+      if(isDupAfil){
+        btn.textContent="Registrar mi voto";btn.disabled=false;
+        toast("Este nombre ya confirmó su voto anteriormente.");return;
+      }
+
       const updAfils=[...(owner.afiliados||[]),afilName];
       const updPts=1+updAfils.length;
       await sbUpdate(owner.id,{afiliados:updAfils,puntos:updPts});
