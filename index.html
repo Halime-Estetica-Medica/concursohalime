@@ -1049,6 +1049,55 @@ function launchConfetti(){
   }
 }
 
+// ── Admin Edit Afiliados Modal ────────────────────────────────────────────────
+function showEditModal(p){
+  const existing=document.getElementById("_edit_modal");
+  if(existing)existing.remove();
+  const afils=[...(p.afiliados||[])];
+  const overlay=document.createElement("div");
+  overlay.className="modal-overlay";overlay.id="_edit_modal";
+  const card=document.createElement("div");card.className="modal-card";
+  const title=document.createElement("div");title.className="modal-title";
+  title.textContent="Editar afiliados";card.appendChild(title);
+  const sub=document.createElement("div");sub.className="modal-sub";
+  function updateSub(){sub.textContent=p.nombre+" "+p.apellido+" · "+afils.length+" afiliado"+(afils.length!==1?"s":"");}
+  updateSub();card.appendChild(sub);
+  const listEl=document.createElement("div");
+  function renderList(){
+    listEl.innerHTML="";
+    afils.forEach((a,i)=>{
+      const row=document.createElement("div");row.className="modal-afil-row";
+      const inp=document.createElement("input");inp.className="modal-afil-inp";inp.value=a;
+      inp.addEventListener("input",ev=>{afils[i]=ev.target.value;});
+      const del=document.createElement("button");del.className="modal-afil-del";del.textContent="×";
+      del.addEventListener("click",()=>{afils.splice(i,1);renderList();updateSub();});
+      row.appendChild(inp);row.appendChild(del);listEl.appendChild(row);
+    });
+  }
+  renderList();card.appendChild(listEl);
+  const addBtn=document.createElement("button");addBtn.className="modal-add";addBtn.textContent="+ Agregar afiliado";
+  addBtn.addEventListener("click",()=>{afils.push("");renderList();updateSub();});
+  card.appendChild(addBtn);
+  const btns=document.createElement("div");btns.className="modal-btns";
+  const cancelBtn=document.createElement("button");cancelBtn.className="modal-cancel";cancelBtn.textContent="Cancelar";
+  cancelBtn.addEventListener("click",()=>overlay.remove());
+  const saveBtn=document.createElement("button");saveBtn.className="modal-save";saveBtn.textContent="Guardar cambios";
+  saveBtn.addEventListener("click",async()=>{
+    const validAfils=afils.map(a=>a.trim()).filter(a=>a);
+    saveBtn.textContent="Guardando…";saveBtn.disabled=true;
+    try{
+      const newPts=1+validAfils.length;
+      await sbUpdate(p.id,{afiliados:validAfils,puntos:newPts});
+      const updated=S.all.map(x=>x.id===p.id?{...x,afiliados:validAfils,puntos:newPts}:x);
+      set({all:updated});overlay.remove();toast("Afiliados actualizados.");
+    } catch(e){saveBtn.textContent="Guardar cambios";saveBtn.disabled=false;toast("Error: "+e.message);}
+  });
+  btns.appendChild(cancelBtn);btns.appendChild(saveBtn);card.appendChild(btns);
+  overlay.appendChild(card);
+  overlay.addEventListener("click",ev=>{if(ev.target===overlay)overlay.remove();});
+  document.body.appendChild(overlay);
+}
+
 // ── Router ────────────────────────────────────────────────────────────────────
 function R(){
   const root=document.getElementById("root");
