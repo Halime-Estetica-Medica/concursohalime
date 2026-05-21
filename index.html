@@ -506,17 +506,12 @@ function pageRanking(){
 
 function rankingView(){
   const wrap=el("div",{style:{width:"100%",maxWidth:"440px"}});
-
-  // Sort by puntos desc
   const sorted=[...S.all].sort((a,b)=>(b.puntos||0)-(a.puntos||0));
 
-  // Header
-  const rh=el("div",{cls:"rank-header"});
-  rh.appendChild(el("h2",{cls:"rank-title"},"Tabla de posiciones"));
-  rh.appendChild(el("p",{cls:"rank-sub"},sorted.length+" participante"+(sorted.length!==1?"s":"")));
-  wrap.appendChild(rh);
+  // Header — sin contador de participantes
+  wrap.appendChild(el("h2",{cls:"rank-title"},"Tabla de posiciones"));
 
-  // Podium (top 3)
+  // Podio top 3
   if(sorted.length>=1){
     const podium=el("div",{cls:"podium"});
     const order=sorted.length===1?[sorted[0]]:sorted.length===2?[sorted[1],sorted[0]]:[sorted[1],sorted[0],sorted[2]];
@@ -532,63 +527,73 @@ function rankingView(){
       item.appendChild(el("div",{cls:"podium-pts"},String(p.puntos||0)+" pts"));
       item.appendChild(el("div",{cls:"podium-avatar "+cfg.cls},initials(p.nombre,p.apellido)));
       item.appendChild(el("div",{cls:"podium-name"},p.nombre+" "+p.apellido));
-      // Bar with number inside
       const bar=el("div",{cls:"podium-bar "+cfg.bar});
       const num=el("div",{style:{fontFamily:"'Cormorant Garamond',Georgia,serif",fontSize:cfg.num==="1"?"36px":cfg.num==="2"?"28px":"22px",fontWeight:"600",color:cfg.numColor,textAlign:"center",lineHeight:"1",paddingTop:cfg.num==="1"?"18px":cfg.num==="2"?"14px":"10px"}},cfg.num);
-      bar.appendChild(num);
-      item.appendChild(bar);
-      podium.appendChild(item);
+      bar.appendChild(num);item.appendChild(bar);podium.appendChild(item);
     });
     wrap.appendChild(podium);
-  }
-
-  // Full list
-  const list=el("div",{cls:"rank-list"});
-  if(!sorted.length){
-    list.appendChild(el("div",{cls:"empty-rank"},"Todavía no hay participantes. ¡Sé el primero!"));
   } else {
-    sorted.forEach((p,i)=>{
-      const isMe=S.me&&p.id===S.me.id;
-      const ri=el("div",{cls:"rank-item"+(isMe?" mine":"")});
-      const posClass=i===0?"gold":i===1?"silver":i===2?"bronze":"";
-      ri.appendChild(el("div",{cls:"rank-pos "+posClass},String(i+1)));
-      const info=el("div",{cls:"rank-info"});
-      const nameEl=el("span",{cls:"rank-name"},p.nombre+" "+p.apellido);
-      if(isMe)nameEl.appendChild(el("span",{cls:"my-badge"},"vos"));
-      info.appendChild(nameEl);
-      info.appendChild(el("div",{cls:"rank-detail"},(p.afiliados||[]).length+" afiliado"+(( p.afiliados||[]).length!==1?"s":"")));
-      ri.appendChild(info);
-      const pts=el("div",{style:{textAlign:"right"}});
-      pts.appendChild(el("div",{cls:"rank-pts"},String(p.puntos||0)));
-      pts.appendChild(el("div",{cls:"rank-pts-label"},"puntos"));
-      ri.appendChild(pts);
-      list.appendChild(ri);
-    });
+    wrap.appendChild(el("div",{cls:"empty-rank"},"Todavía no hay participantes. ¡Sé el primero!"));
   }
-  wrap.appendChild(list);
 
-  // Actions
-  // Show personal ref link if registered
+  // Card personal — solo si está registrada
+  if(S.me){
+    const myPos=sorted.findIndex(p=>p.id===S.me.id)+1;
+    const card=el("div",{style:{background:"linear-gradient(135deg,rgba(201,169,110,.08),rgba(201,169,110,.03))",border:"1px solid rgba(201,169,110,.28)",borderLeft:"3px solid #c9a96e",borderRadius:"16px",padding:"18px 18px",marginTop:"16px",width:"100%"}});
+    card.appendChild(el("div",{style:{fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",color:"var(--gold)",marginBottom:"12px"}},"Tu posición"));
+
+    // Name + position + points
+    const top=el("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:"14px"}});
+    const left=el("div",{});
+    const nameRow=el("div",{style:{display:"flex",alignItems:"center",gap:"6px"}});
+    nameRow.appendChild(el("span",{style:{fontSize:"15px",fontWeight:"500",color:"var(--dark)"}},S.me.nombre+" "+S.me.apellido));
+    nameRow.appendChild(el("span",{cls:"my-badge"},"vos"));
+    left.appendChild(nameRow);
+    left.appendChild(el("div",{style:{fontSize:"12px",color:"var(--soft)",marginTop:"3px"}},"Posición #"+String(myPos)));
+    top.appendChild(left);
+    const right=el("div",{style:{textAlign:"right"}});
+    right.appendChild(el("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:"30px",fontWeight:"600",color:"var(--gold)"}},String(S.me.puntos||0)));
+    right.appendChild(el("div",{style:{fontSize:"10px",color:"var(--soft)"}},"puntos"));
+    top.appendChild(right);
+    card.appendChild(top);
+
+    // Afiliados
+    const afils=S.me.afiliados||[];
+    if(afils.length){
+      const afilSection=el("div",{style:{borderTop:"1px solid rgba(201,169,110,.15)",paddingTop:"12px"}});
+      afilSection.appendChild(el("div",{style:{fontSize:"11px",color:"var(--soft)",marginBottom:"8px"}},String(afils.length)+" afiliado"+(afils.length!==1?"s":"")+" confirmado"+(afils.length!==1?"s":"")));
+      const pills=el("div",{style:{display:"flex",flexWrap:"wrap",gap:"6px"}});
+      afils.forEach(a=>{
+        pills.appendChild(el("span",{style:{background:"rgba(201,169,110,.08)",border:"0.5px solid rgba(201,169,110,.2)",borderRadius:"20px",padding:"3px 10px",fontSize:"11px",color:"var(--mid)"}},a));
+      });
+      afilSection.appendChild(pills);
+      card.appendChild(afilSection);
+    }
+    wrap.appendChild(card);
+  }
+
+  // Link personal
   const myRef=localStorage.getItem("halime_my_ref")||(S.me&&S.me.ref_code)||null;
   if(S.me&&myRef){
     const baseUrl=window.location.origin+window.location.pathname;
     const refLink=baseUrl+"?ref="+encodeURIComponent(myRef);
-    const linkBox=el("div",{style:{background:"linear-gradient(135deg,rgba(201,169,110,.10),rgba(194,96,122,.06))",border:"1px solid rgba(201,169,110,.28)",borderRadius:"16px",padding:"18px 18px",marginBottom:"14px",width:"100%",maxWidth:"440px"}});
+    const linkBox=el("div",{style:{background:"linear-gradient(135deg,rgba(201,169,110,.10),rgba(194,96,122,.06))",border:"1px solid rgba(201,169,110,.28)",borderRadius:"16px",padding:"18px 18px",marginTop:"12px",width:"100%"}});
     linkBox.appendChild(el("div",{style:{fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",color:"var(--gold)",marginBottom:"8px"}},"Tu link personal"));
-    linkBox.appendChild(el("div",{style:{fontSize:"13px",color:"var(--mid)",marginBottom:"12px",lineHeight:"1.6"}},"¡Mandá este link a tus amigos y familia para que te ayuden a sumar puntos! Cada uno que vote con 5 ★ suma 1 punto para vos."));
+    linkBox.appendChild(el("div",{style:{fontSize:"13px",color:"var(--mid)",marginBottom:"12px",lineHeight:"1.6"}},"¡Mandá este link a tus amigos y familia para que te ayuden a sumar puntos! Cada uno que vote con 5 ★ suma 1 punto más a tu posición."));
     const linkText=el("div",{style:{fontSize:"11px",color:"var(--soft)",wordBreak:"break-all",marginBottom:"12px",lineHeight:"1.5",background:"rgba(255,255,255,.6)",padding:"8px 10px",borderRadius:"8px"}},refLink);
     linkBox.appendChild(linkText);
-    const copyBtn=el("button",{cls:"btn-primary",style:{fontSize:"13px",padding:"11px 28px"}},"Copiar link 📋");
+    const copyBtn=el("button",{cls:"btn-confirm-active",style:{width:"100%",padding:"15px",fontSize:"15px",fontWeight:"600",letterSpacing:".5px"}},"📋  Copiar mi link y compartir");
     copyBtn.addEventListener("click",()=>{
       navigator.clipboard.writeText(refLink);
-      copyBtn.textContent="¡Copiado! ✓";
-      setTimeout(()=>copyBtn.textContent="Copiar link 📋",2000);
+      copyBtn.textContent="✓  ¡Link copiado!";
+      setTimeout(()=>copyBtn.textContent="📋  Copiar mi link y compartir",2500);
     });
     linkBox.appendChild(copyBtn);
     wrap.appendChild(linkBox);
   }
 
-  const actions=el("div",{cls:"rank-actions"});
+  // Botones
+  const actions=el("div",{cls:"rank-actions",style:{marginTop:"12px"}});
   if(!S.me){
     const joinBtn=el("button",{cls:"btn-primary"},"Participar");
     joinBtn.addEventListener("click",()=>set({page:"register",regStep:1}));
@@ -597,8 +602,12 @@ function rankingView(){
   const refBtn=el("button",{cls:"btn-actualizar",style:{width:"100%",maxWidth:"440px",padding:"14px",borderRadius:"var(--r-xl)",border:"none",background:"linear-gradient(135deg,#c9a96e,#a07840)",color:"#fff",fontSize:"14px",fontWeight:"500",cursor:"pointer",fontFamily:"'DM Sans',sans-serif",letterSpacing:".3px",transition:"opacity .2s"}},"Actualizar ranking");
   refBtn.addEventListener("click",async()=>{
     refBtn.textContent="Actualizando…";refBtn.style.opacity=".7";
-    try{const all=await sbGet("?order=puntos.desc");set({all});}
-    catch{refBtn.textContent="Actualizar ranking";refBtn.style.opacity="1";toast("Error al actualizar.")}
+    try{
+      const all=await sbGet("?order=puntos.desc");
+      const myId=localStorage.getItem("halime_my_id");
+      const me=myId?all.find(p=>String(p.id)===myId)||S.me:S.me;
+      set({all,me});
+    } catch{refBtn.textContent="Actualizar ranking";refBtn.style.opacity="1";toast("Error al actualizar.")}
   });
   actions.appendChild(refBtn);
   wrap.appendChild(actions);
