@@ -509,7 +509,7 @@ function rankingView(){
   const sorted=[...S.all].sort((a,b)=>(b.puntos||0)-(a.puntos||0));
 
   // Header — sin contador de participantes
-  wrap.appendChild(el("h2",{cls:"rank-title"},"Tabla de posiciones"));
+  wrap.appendChild(el("h2",{cls:"rank-title",style:{textAlign:"center",width:"100%"}},"Tabla de posiciones"));
 
   // Podio top 3
   if(sorted.length>=1){
