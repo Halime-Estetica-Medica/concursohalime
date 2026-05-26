@@ -16,8 +16,6 @@
   --r:14px;--r-lg:22px;--r-xl:32px;
 }
 body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 0%,#fdf0f4 40%,#f8ede5 100%);min-height:100vh;color:var(--dark)}
-
-/* ── SHARED ── */
 .page{min-height:100vh;display:flex;flex-direction:column;align-items:center;padding:0 16px 48px}
 .logo-wrap{width:110px;height:110px;border-radius:50%;background:radial-gradient(circle,rgba(201,169,110,.12),transparent 70%);display:flex;align-items:center;justify-content:center;margin:40px auto 16px;box-shadow:0 0 0 1px rgba(201,169,110,.15)}
 .logo{width:82px;height:82px;object-fit:contain}
@@ -38,8 +36,6 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .section-title{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:18px;padding-bottom:12px;border-bottom:1px solid var(--nude-dk)}
 .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--dark);color:#f7e8ef;padding:12px 24px;border-radius:var(--r-xl);font-size:13px;box-shadow:var(--shadow-lg);z-index:999;opacity:0;transition:opacity .3s;white-space:nowrap}
 .toast.show{opacity:1}
-
-/* ── LANDING ── */
 .landing-title{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:500;color:var(--dark);text-align:center;line-height:1.2;margin-bottom:10px}
 .landing-sub{font-size:14px;color:var(--mid);text-align:center;line-height:1.75;max-width:300px;margin:0 auto 28px;font-weight:300}
 .prize-box{background:linear-gradient(135deg,rgba(201,169,110,.10),rgba(194,96,122,.06));border:1px solid rgba(201,169,110,.28);border-radius:20px;padding:20px 24px;text-align:center;margin-bottom:28px;width:100%;max-width:440px}
@@ -52,8 +48,6 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .step-text{font-size:13px;color:var(--mid);line-height:1.65}
 .step-text strong{color:var(--dark);font-weight:500}
 .stars-highlight{color:var(--gold);font-weight:600;letter-spacing:.5px;white-space:nowrap}
-
-/* ── REGISTER FORM ── */
 .reg-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;text-align:center;margin-bottom:6px}
 .reg-sub{font-size:13px;color:var(--soft);text-align:center;margin-bottom:24px;line-height:1.6}
 .afiliado-row{display:flex;gap:10px;align-items:center;margin-bottom:10px}
@@ -64,12 +58,10 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .btn-del{background:none;border:none;color:var(--nude-dk);cursor:pointer;font-size:18px;padding:4px;line-height:1;transition:color .2s;flex-shrink:0}
 .btn-del:hover{color:var(--rose)}
 .afil-section{margin-top:20px}
-
-/* ── RANKING ── */
 .rank-header{text-align:center;width:100%;max-width:440px;margin-bottom:20px}
 .rank-title{font-family:'Cormorant Garamond',serif;font-size:32px;font-weight:500;margin-bottom:4px}
 .rank-sub{font-size:13px;color:var(--soft)}
-.podium{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin-bottom:24px;width:100%;max-width:440px}
+.podium{display:flex;align-items:flex-end;justify-content:center;gap:8px;margin-bottom:16px;width:100%;max-width:440px}
 .podium-item{display:flex;flex-direction:column;align-items:center;gap:6px}
 .podium-avatar{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600;color:var(--white)}
 .podium-avatar.p1{width:64px;height:64px;background:linear-gradient(135deg,#c9a96e,#e8c878);font-size:24px;box-shadow:0 4px 20px rgba(201,169,110,.35)}
@@ -99,8 +91,12 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .rank-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:20px;width:100%;max-width:440px}
 .rank-actions .btn-primary{flex:1;min-width:0}
 .rank-actions .btn-secondary{flex:1;min-width:0;margin:0}
-
-/* ── HISTORY ── */
+/* ── NUEVA: aviso desempate y cierre ── */
+.concurso-aviso{width:100%;max-width:440px;background:linear-gradient(135deg,rgba(201,169,110,.07),rgba(194,96,122,.04));border:1px solid rgba(201,169,110,.22);border-left:3px solid rgba(201,169,110,.5);border-radius:12px;padding:12px 16px;margin-bottom:18px;display:flex;align-items:flex-start;gap:10px;}
+.concurso-aviso-icon{font-size:16px;flex-shrink:0;margin-top:1px;}
+.concurso-aviso-body{font-size:11.5px;color:var(--mid);line-height:1.7;}
+.concurso-aviso-body strong{color:var(--dark);font-weight:600;display:block;margin-bottom:3px;font-size:12px;}
+/* ── /NUEVA ── */
 .hist-title{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:500;text-align:center;margin-bottom:4px}
 .hist-sub{font-size:13px;color:var(--soft);text-align:center;margin-bottom:24px}
 .hist-item{background:var(--white);border-radius:var(--r);padding:14px 16px;margin-bottom:8px;box-shadow:0 2px 12px rgba(120,60,80,.06);display:flex;gap:12px;align-items:flex-start}
@@ -114,27 +110,11 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .nav-tabs{display:flex;gap:0;background:rgba(255,255,255,.7);border-radius:var(--r-xl);padding:4px;margin-bottom:20px;width:100%;max-width:440px;box-shadow:0 2px 12px rgba(120,60,80,.06)}
 .nav-tab{flex:1;padding:10px;border:none;background:transparent;border-radius:20px;font-size:13px;color:var(--soft);cursor:pointer;font-family:'DM Sans',sans-serif;transition:all .2s;font-weight:400}
 .nav-tab.active{background:var(--white);color:var(--dark);font-weight:500;box-shadow:0 2px 8px rgba(120,60,80,.08)}
-/* ── ACTUALIZAR BUTTON ANIMATIONS ── */
-@keyframes pulse-gold{
-  0%,100%{box-shadow:0 4px 16px rgba(160,120,60,.25),0 0 0 0 rgba(201,169,110,.4)}
-  50%{box-shadow:0 6px 24px rgba(160,120,60,.40),0 0 0 8px rgba(201,169,110,0)}
-}
-@keyframes shimmer{
-  0%{transform:translateX(-100%) skewX(-15deg)}
-  100%{transform:translateX(250%) skewX(-15deg)}
-}
-.btn-actualizar{
-  position:relative;overflow:hidden;
-  animation:pulse-gold 2.5s ease-in-out infinite;
-}
-.btn-actualizar::after{
-  content:"";position:absolute;top:0;left:0;width:40%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);
-  animation:shimmer 3s ease-in-out infinite;
-}
+@keyframes pulse-gold{0%,100%{box-shadow:0 4px 16px rgba(160,120,60,.25),0 0 0 0 rgba(201,169,110,.4)}50%{box-shadow:0 6px 24px rgba(160,120,60,.40),0 0 0 8px rgba(201,169,110,0)}}
+@keyframes shimmer{0%{transform:translateX(-100%) skewX(-15deg)}100%{transform:translateX(250%) skewX(-15deg)}}
+.btn-actualizar{position:relative;overflow:hidden;animation:pulse-gold 2.5s ease-in-out infinite;}
+.btn-actualizar::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);animation:shimmer 3s ease-in-out infinite;}
 .disclaimer{font-size:11px;color:var(--soft);text-align:center;line-height:1.7;max-width:320px;margin:20px auto 0;padding:14px 18px;border-top:1px solid var(--nude-dk);border-radius:var(--r)}
-
-/* ── AFILIADO FLOW ── */
 .ref-page{min-height:100vh;background:linear-gradient(175deg,#fff9f7 0%,#fdf0f4 40%,#f8ede5 100%);display:flex;flex-direction:column;align-items:center;padding:0 16px 48px}
 .ref-invite{background:linear-gradient(135deg,rgba(201,169,110,.10),rgba(194,96,122,.06));border:1px solid rgba(201,169,110,.28);border-radius:20px;padding:18px 22px;text-align:center;margin-bottom:24px;width:100%;max-width:440px}
 .ref-invite-label{font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px}
@@ -148,33 +128,12 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 .ref-done-sub strong{color:var(--rose)}
 .btn-locked{opacity:.4;cursor:not-allowed!important;position:relative}
 .btn-locked::after{content:"🔒";font-size:12px;margin-left:8px}
-@keyframes pulse-rose{
-  0%,100%{box-shadow:0 4px 16px rgba(194,96,122,.3),0 0 0 0 rgba(194,96,122,.4)}
-  50%{box-shadow:0 6px 24px rgba(194,96,122,.5),0 0 0 8px rgba(194,96,122,0)}
-}
-@keyframes shimmer-rose{
-  0%{transform:translateX(-100%) skewX(-15deg)}
-  100%{transform:translateX(250%) skewX(-15deg)}
-}
-.btn-confirm-active{
-  width:100%;max-width:440px;padding:15px;border-radius:var(--r-xl);border:none;
-  background:linear-gradient(135deg,#c87090,#9a3a58)!important;
-  color:#fff!important;font-size:14px;font-weight:500;cursor:pointer;
-  font-family:'DM Sans',sans-serif;letter-spacing:.4px;
-  animation:pulse-rose 2s ease-in-out infinite;
-  position:relative;overflow:hidden;margin-top:10px;
-}
-.btn-confirm-active::after{
-  content:"";position:absolute;top:0;left:0;width:40%;height:100%;
-  background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);
-  animation:shimmer-rose 2.5s ease-in-out infinite;
-}
-
-/* ── CONFETTI ── */
+@keyframes pulse-rose{0%,100%{box-shadow:0 4px 16px rgba(194,96,122,.3),0 0 0 0 rgba(194,96,122,.4)}50%{box-shadow:0 6px 24px rgba(194,96,122,.5),0 0 0 8px rgba(194,96,122,0)}}
+@keyframes shimmer-rose{0%{transform:translateX(-100%) skewX(-15deg)}100%{transform:translateX(250%) skewX(-15deg)}}
+.btn-confirm-active{width:100%;max-width:440px;padding:15px;border-radius:var(--r-xl);border:none;background:linear-gradient(135deg,#c87090,#9a3a58)!important;color:#fff!important;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif;letter-spacing:.4px;animation:pulse-rose 2s ease-in-out infinite;position:relative;overflow:hidden;margin-top:10px;}
+.btn-confirm-active::after{content:"";position:absolute;top:0;left:0;width:40%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.3),transparent);animation:shimmer-rose 2.5s ease-in-out infinite;}
 .confetti-piece{position:fixed;width:8px;height:8px;top:-10px;border-radius:2px;animation:confetti-fall linear forwards;pointer-events:none;z-index:9999}
 @keyframes confetti-fall{0%{transform:translateY(0) rotate(0deg);opacity:1}100%{transform:translateY(110vh) rotate(720deg);opacity:0}}
-
-/* ── ADMIN ── */
 .adm-page{min-height:100vh;background:#f8f4f6}
 .adm-hdr{background:linear-gradient(135deg,#2d1a24,#1a1410);padding:16px 20px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:10px;position:sticky;top:0;z-index:10}
 .adm-hdr-left{display:flex;align-items:center;gap:12px}
@@ -228,111 +187,37 @@ body{font-family:'DM Sans',sans-serif;background:linear-gradient(175deg,#fff9f7 
 </head>
 <body>
 <div id="root"></div>
-
 <script>
-const LOGO = "data:image/png;base64,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";
+const LOGO = "data:image/png;base64,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";
 const SB_URL = "https://bqtrfaonyfhzxzslzrvt.supabase.co";
 const SB_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImJxdHJmYW9ueWZoenh6c2x6cnZ0Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzgwMDk2NTEsImV4cCI6MjA5MzU4NTY1MX0.HMsR0m7uWt29Tb_uXB7tJmqUY736h49-uEmf9FD7XvM";
 const GOOGLE_URL = "https://share.google/zs1BlSRyRWDPxoo89";
 const TABLE = "concurso_participantes";
-
-// ── Supabase ──────────────────────────────────────────────────────────────────
 const SB_HEADERS = {"Content-Type":"application/json","apikey":SB_KEY,"Authorization":"Bearer "+SB_KEY};
-
-async function sbGet(query=""){
-  const r=await fetch(`${SB_URL}/rest/v1/${TABLE}${query}`,{headers:SB_HEADERS});
-  if(!r.ok)throw new Error(await r.text());
-  return r.json();
-}
-async function sbInsert(row){
-  const r=await fetch(`${SB_URL}/rest/v1/${TABLE}`,{method:"POST",headers:{...SB_HEADERS,"Prefer":"return=representation"},body:JSON.stringify(row)});
-  if(!r.ok)throw new Error(await r.text());
-  return r.json();
-}
-async function sbGetByRef(refCode){
-  const r=await fetch(`${SB_URL}/rest/v1/${TABLE}?ref_code=eq.${encodeURIComponent(refCode)}&limit=1`,{headers:SB_HEADERS});
-  if(!r.ok)throw new Error(await r.text());
-  const data=await r.json();
-  return data[0]||null;
-}
-async function sbDeleteParticipante(id){
-  const r=await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${id}`,{method:"DELETE",headers:SB_HEADERS});
-  if(!r.ok)throw new Error(await r.text());
-}
-async function sbUpdate(id,patch){
-  const r=await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${id}`,{method:"PATCH",headers:SB_HEADERS,body:JSON.stringify(patch)});
-  if(!r.ok)throw new Error(await r.text());
-}
-
-// ── State ─────────────────────────────────────────────────────────────────────
-let S={
-  page:"landing",
-  tab:"ranking",
-  me:null,
-  all:[],
-  loading:false,
-  regStep:1,
-  adminAuth:false,
-  adminPass:"",
-  adminPassErr:false,
-  refCode:null,      // ref code from URL
-  refOwner:null,     // {id, nombre, apellido} of the base participant
-};
+async function sbGet(query=""){const r=await fetch(`${SB_URL}/rest/v1/${TABLE}${query}`,{headers:SB_HEADERS});if(!r.ok)throw new Error(await r.text());return r.json()}
+async function sbInsert(row){const r=await fetch(`${SB_URL}/rest/v1/${TABLE}`,{method:"POST",headers:{...SB_HEADERS,"Prefer":"return=representation"},body:JSON.stringify(row)});if(!r.ok)throw new Error(await r.text());return r.json()}
+async function sbGetByRef(refCode){const r=await fetch(`${SB_URL}/rest/v1/${TABLE}?ref_code=eq.${encodeURIComponent(refCode)}&limit=1`,{headers:SB_HEADERS});if(!r.ok)throw new Error(await r.text());const data=await r.json();return data[0]||null}
+async function sbDeleteParticipante(id){const r=await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${id}`,{method:"DELETE",headers:SB_HEADERS});if(!r.ok)throw new Error(await r.text())}
+async function sbUpdate(id,patch){const r=await fetch(`${SB_URL}/rest/v1/${TABLE}?id=eq.${id}`,{method:"PATCH",headers:SB_HEADERS,body:JSON.stringify(patch)});if(!r.ok)throw new Error(await r.text())}
+let S={page:"landing",tab:"ranking",me:null,all:[],loading:false,regStep:1,adminAuth:false,adminPass:"",adminPassErr:false,refCode:null,refOwner:null};
 function set(p){S={...S,...p};R()}
+function el(tag,at,...ch){const e=document.createElement(tag);if(at)for(const[k,v]of Object.entries(at)){if(k==="cls")e.className=v;else if(k==="on")for(const[ev,fn]of Object.entries(v))e.addEventListener(ev,fn);else if(k==="style"&&typeof v==="object")Object.assign(e.style,v);else e.setAttribute(k,v)}for(const c of ch.flat(9)){if(c==null||c===false)continue;e.appendChild(typeof c==="string"?document.createTextNode(c):c)}return e}
+function toast(msg){let t=document.getElementById("_toast");if(!t){t=el("div",{cls:"toast",id:"_toast"});document.body.appendChild(t)}t.textContent=msg;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),2500)}
+function logoHeader(){const w=el("div",{});w.appendChild(el("div",{cls:"logo-wrap"},el("img",{cls:"logo",src:LOGO,alt:"Halime"})));w.appendChild(el("div",{cls:"brand"},"Halime · Estética Médica"));return w}
+function initials(nombre,apellido){return((nombre||"").charAt(0)+(apellido||"").charAt(0)).toUpperCase()}
+function puntos(p){return 1+(p.afiliados||[]).length}
 
-// ── DOM helper ────────────────────────────────────────────────────────────────
-function el(tag,at,...ch){
-  const e=document.createElement(tag);
-  if(at)for(const[k,v]of Object.entries(at)){
-    if(k==="cls")e.className=v;
-    else if(k==="on")for(const[ev,fn]of Object.entries(v))e.addEventListener(ev,fn);
-    else if(k==="style"&&typeof v==="object")Object.assign(e.style,v);
-    else e.setAttribute(k,v);
-  }
-  for(const c of ch.flat(9)){if(c==null||c===false)continue;e.appendChild(typeof c==="string"?document.createTextNode(c):c)}
-  return e;
-}
-function toast(msg){
-  let t=document.getElementById("_toast");
-  if(!t){t=el("div",{cls:"toast",id:"_toast"});document.body.appendChild(t)}
-  t.textContent=msg;t.classList.add("show");
-  setTimeout(()=>t.classList.remove("show"),2500);
-}
-
-function logoHeader(){
-  const w=el("div",{});
-  w.appendChild(el("div",{cls:"logo-wrap"},el("img",{cls:"logo",src:LOGO,alt:"Halime"})));
-  w.appendChild(el("div",{cls:"brand"},"Halime · Estética Médica"));
-  return w;
-}
-
-// Iniciales para avatar
-function initials(nombre,apellido){
-  return ((nombre||"").charAt(0)+(apellido||"").charAt(0)).toUpperCase();
-}
-
-// Calcular puntos: 1 por voto propio + 1 por cada afiliado
-function puntos(p){
-  return 1 + (p.afiliados||[]).length;
-}
-
-// ── LANDING ───────────────────────────────────────────────────────────────────
 function pageLanding(){
   const page=el("div",{cls:"page"});
   page.appendChild(logoHeader());
   page.appendChild(el("h1",{cls:"landing-title"},"Concurso Halime"));
   page.appendChild(el("p",{cls:"landing-sub"},"Sumá votos de amigos y familia, escalá en el ranking y ganá tu próxima sesión completamente gratis."));
-
   const prize=el("div",{cls:"prize-box"});
   prize.appendChild(el("div",{cls:"prize-label"},"Premio"));
   const pv=el("div",{cls:"prize-val"},"La persona con más puntos gana");
   pv.appendChild(el("span",{cls:"prize-highlight"},"Su próxima sesión, completamente gratis."));
-  prize.appendChild(pv);
-  page.appendChild(prize);
-
+  prize.appendChild(pv);page.appendChild(prize);
   const steps=el("div",{cls:"steps"});
-
-  // Paso 1 — con "5 estrellas" resaltado
   const step1=el("div",{cls:"step"});
   step1.appendChild(el("div",{cls:"step-num"},"1"));
   const t1=el("div",{cls:"step-text"});
@@ -341,165 +226,85 @@ function pageLanding(){
   t1.appendChild(el("span",{cls:"stars-highlight"},"5 estrellas ★★★★★"));
   t1.appendChild(document.createTextNode(" en nuestro perfil de Google."));
   step1.appendChild(t1);
-  const pts1=el("div",{style:{fontSize:"12px",color:"var(--soft)",marginTop:"6px",paddingLeft:"46px"}},
-    "5★ = 1 punto"
-  );
-  step1.appendChild(pts1);
-  steps.appendChild(step1);
-
-  // Pasos 2 y 3
-  [
-    ["2","Registrá tu voto","Volvé acá, ingresá tu nombre y obtené tu link personal para compartir."],
-    ["3","Compartí tu link","Mandáselo a amigos y familia. Cada uno que vote con 5 ★ por vos suma 1 punto más a tu posición."],
-  ].forEach(([n,title,desc])=>{
-    const s=el("div",{cls:"step"});
-    s.appendChild(el("div",{cls:"step-num"},n));
-    const t=el("div",{cls:"step-text"});
-    t.appendChild(el("strong",{},title+" — "));
-    t.appendChild(document.createTextNode(desc));
-    s.appendChild(t);steps.appendChild(s);
-  });
+  const pts1=el("div",{style:{fontSize:"12px",color:"var(--soft)",marginTop:"6px",paddingLeft:"46px"}},"5★ = 1 punto");
+  step1.appendChild(pts1);steps.appendChild(step1);
+  [["2","Registrá tu voto","Volvé acá, ingresá tu nombre y obtené tu link personal para compartir."],
+   ["3","Compartí tu link","Mandáselo a amigos y familia. Cada uno que vote con 5 ★ por vos suma 1 punto más a tu posición."]
+  ].forEach(([n,title,desc])=>{const s=el("div",{cls:"step"});s.appendChild(el("div",{cls:"step-num"},n));const t=el("div",{cls:"step-text"});t.appendChild(el("strong",{},title+" — "));t.appendChild(document.createTextNode(desc));s.appendChild(t);steps.appendChild(s)});
   page.appendChild(steps);
-
-  const voted = localStorage.getItem("halime_voted");
-  const registered = localStorage.getItem("halime_registered");
-
-  // Step 1 — Votar en Google (siempre disponible)
+  const voted=localStorage.getItem("halime_voted");
+  const registered=localStorage.getItem("halime_registered");
   const ga=el("a",{cls:"btn-google",href:GOOGLE_URL,target:"_blank"},"⭐  Votar en Google");
-  ga.addEventListener("click",()=>{
-    setTimeout(()=>{
-      localStorage.setItem("halime_voted","1");
-      already.classList.remove("btn-locked");
-      already.disabled=false;
-      already.title="";
-    },800);
-  });
+  ga.addEventListener("click",()=>{setTimeout(()=>{localStorage.setItem("halime_voted","1");already.classList.remove("btn-locked");already.disabled=false;already.title=""},800)});
   page.appendChild(ga);
-
-  // Step 2 — Registrar (bloqueado si ya registrado o si no votó todavía)
-  const alreadyLocked = !!registered;
-  const alreadyText = alreadyLocked ? "✓  Ya registraste tu participación" : "Registrar mi participación";
+  const alreadyLocked=!!registered;
+  const alreadyText=alreadyLocked?"✓  Ya registraste tu participación":"Registrar mi participación";
   const already=el("button",{cls:"btn-secondary"+(!voted||alreadyLocked?" btn-locked":"")},alreadyText);
   already.disabled=!voted||alreadyLocked;
-  if(!voted&&!alreadyLocked) already.title="Primero votá en Google";
-  already.addEventListener("click",()=>{
-    if(!localStorage.getItem("halime_voted")||localStorage.getItem("halime_registered"))return;
-    set({page:"register",regStep:1});
-  });
+  if(!voted&&!alreadyLocked)already.title="Primero votá en Google";
+  already.addEventListener("click",()=>{if(!localStorage.getItem("halime_voted")||localStorage.getItem("halime_registered"))return;set({page:"register",regStep:1})});
   page.appendChild(already);
-
-  // Step 3 — Ver Ranking
   const rank=el("button",{cls:"btn-secondary"+(registered?"":" btn-locked"),style:{marginTop:"6px"}},"Ver Ranking");
   rank.disabled=!registered;
-  if(!registered) rank.title="Primero registrá tu participación";
-  rank.addEventListener("click",async()=>{
-    if(!localStorage.getItem("halime_registered"))return;
-    set({loading:true});
-    try{const all=await sbGet("?order=puntos.desc");set({all,loading:false,page:"ranking"})}
-    catch{set({loading:false});toast("Error al cargar ranking.")}
-  });
+  if(!registered)rank.title="Primero registrá tu participación";
+  rank.addEventListener("click",async()=>{if(!localStorage.getItem("halime_registered"))return;set({loading:true});try{const all=await sbGet("?order=puntos.desc");set({all,loading:false,page:"ranking"})}catch{set({loading:false});toast("Error al cargar ranking.")}});
   page.appendChild(rank);
-
-  // Disclaimer
-  const disc=el("div",{cls:"disclaimer"},
-    "* El premio es válido únicamente para la próxima jornada de Halime. En caso de no poder concretarse, pasará al participante en la posición inmediatamente anterior."
-  );
+  const disc=el("div",{cls:"disclaimer"},"* El premio es válido únicamente para la próxima jornada de Halime. En caso de no poder concretarse, pasará al participante en la posición inmediatamente anterior.");
   page.appendChild(disc);
-
   return page;
 }
 
-// ── REGISTER ─────────────────────────────────────────────────────────────────
 function pageRegister(){
   const page=el("div",{cls:"page"});
   page.appendChild(logoHeader());
-
-  // Local state — no re-render on typing
   const LF={nombre:"",apellido:"",afiliados:[]};
-
   page.appendChild(el("h2",{cls:"reg-title"},"Registrar participación"));
   page.appendChild(el("p",{cls:"reg-sub"},"Ingresá tu nombre completo para registrar tu participación y obtener tu link personal para compartir."));
-
   const card=el("div",{cls:"card"});
-
-  // — Nombre propio —
   card.appendChild(el("div",{cls:"section-title"},"Tus datos"));
   const fgNombre=el("div",{cls:"fg"});
   fgNombre.appendChild(el("label",{cls:"flabel"},"Tu nombre"));
   const inpNombre=el("input",{cls:"finp",type:"text",placeholder:"Nombre"});
   inpNombre.addEventListener("input",ev=>LF.nombre=ev.target.value);
   fgNombre.appendChild(inpNombre);card.appendChild(fgNombre);
-
   const fgApellido=el("div",{cls:"fg"});
   fgApellido.appendChild(el("label",{cls:"flabel"},"Tu apellido"));
   const inpApellido=el("input",{cls:"finp",type:"text",placeholder:"Apellido"});
   inpApellido.addEventListener("input",ev=>LF.apellido=ev.target.value);
   fgApellido.appendChild(inpApellido);card.appendChild(fgApellido);
-
-  // — Afiliados —
-
-
-  // — Submit —
   const submitBtn=el("button",{cls:"btn-primary",style:{marginTop:"24px"}},"Registrar y obtener mi link");
   submitBtn.addEventListener("click",async()=>{
-    // Validate
-    if(!LF.nombre.trim()||!LF.apellido.trim()){
-      toast("Ingresá tu nombre y apellido completo.");return;
-    }
+    if(!LF.nombre.trim()||!LF.apellido.trim()){toast("Ingresá tu nombre y apellido completo.");return}
     const afilValidos=[];
     submitBtn.textContent="Verificando…";submitBtn.disabled=true;
     try{
-      // Check for duplicate apellido
       const apellidoNorm=LF.apellido.trim().toLowerCase();
       const existing=await sbGet("?order=id.asc");
       const duplicate=existing.find(p=>p.apellido&&p.apellido.toLowerCase()===apellidoNorm);
-      if(duplicate){
-        submitBtn.textContent="Registrar y obtener mi link";
-        submitBtn.disabled=false;
-        toast("Ya existe un participante con ese apellido.");
-        return;
-      }
+      if(duplicate){submitBtn.textContent="Registrar y obtener mi link";submitBtn.disabled=false;toast("Ya existe un participante con ese apellido.");return}
       submitBtn.textContent="Registrando…";
-      // Generate unique ref code
-      const refCode=(LF.nombre.trim().toLowerCase().replace(/\s+/g,"-")+"-"+
-        LF.apellido.trim().toLowerCase().replace(/\s+/g,"-")+"-"+
-        Math.random().toString(36).substr(2,4));
-      const data=await sbInsert({
-        nombre:LF.nombre.trim(),
-        apellido:LF.apellido.trim(),
-        afiliados:afilValidos,
-        puntos:1+afilValidos.length,
-        ts:new Date().toISOString(),
-        ref_code:refCode
-      });
+      const refCode=(LF.nombre.trim().toLowerCase().replace(/\s+/g,"-")+"-"+LF.apellido.trim().toLowerCase().replace(/\s+/g,"-")+"-"+Math.random().toString(36).substr(2,4));
+      const data=await sbInsert({nombre:LF.nombre.trim(),apellido:LF.apellido.trim(),afiliados:afilValidos,puntos:1+afilValidos.length,ts:new Date().toISOString(),ref_code:refCode});
       const me=Array.isArray(data)?data[0]:data;
       const all=await sbGet("?order=puntos.desc");
       localStorage.setItem("halime_registered","1");
       localStorage.setItem("halime_my_id",String(me.id));
       localStorage.setItem("halime_my_ref",refCode);
       set({me,all,page:"ranking",tab:"ranking",loading:false});
-      setTimeout(launchConfetti, 200);
-    } catch(e){
-      submitBtn.textContent="Registrar y obtener mi link";
-      submitBtn.disabled=false;
-      toast("Error al registrar: "+e.message);
-    }
+      setTimeout(launchConfetti,200);
+    } catch(e){submitBtn.textContent="Registrar y obtener mi link";submitBtn.disabled=false;toast("Error al registrar: "+e.message)}
   });
   card.appendChild(submitBtn);
-
   const back=el("button",{cls:"btn-secondary"},"← Volver");
   back.addEventListener("click",()=>set({page:"landing"}));
   card.appendChild(back);
-
   page.appendChild(card);
   return page;
 }
 
-// ── RANKING ───────────────────────────────────────────────────────────────────
 function pageRanking(){
   const page=el("div",{cls:"page"});
   page.appendChild(logoHeader());
-
   page.appendChild(rankingView());
   return page;
 }
@@ -507,19 +312,13 @@ function pageRanking(){
 function rankingView(){
   const wrap=el("div",{style:{width:"100%",maxWidth:"440px"}});
   const sorted=[...S.all].sort((a,b)=>(b.puntos||0)-(a.puntos||0));
-
-  // Header — sin contador de participantes
   wrap.appendChild(el("h2",{cls:"rank-title",style:{textAlign:"center",width:"100%"}},"Tabla de posiciones"));
 
   // Podio top 3
   if(sorted.length>=1){
     const podium=el("div",{cls:"podium"});
     const order=sorted.length===1?[sorted[0]]:sorted.length===2?[sorted[1],sorted[0]]:[sorted[1],sorted[0],sorted[2]];
-    const configs=[
-      {cls:"p2",bar:"b2",num:"2",numColor:"#909aaa"},
-      {cls:"p1",bar:"b1",num:"1",numColor:"#BA7517"},
-      {cls:"p3",bar:"b3",num:"3",numColor:"#c9855a"},
-    ];
+    const configs=[{cls:"p2",bar:"b2",num:"2",numColor:"#909aaa"},{cls:"p1",bar:"b1",num:"1",numColor:"#BA7517"},{cls:"p3",bar:"b3",num:"3",numColor:"#c9855a"}];
     order.forEach((p,i)=>{
       if(!p)return;
       const cfg=configs[i];
@@ -536,13 +335,20 @@ function rankingView(){
     wrap.appendChild(el("div",{cls:"empty-rank"},"Todavía no hay participantes. ¡Sé el primero!"));
   }
 
-  // Card personal — solo si está registrada
+  // ── AVISO DESEMPATE Y CIERRE (NUEVO) ──
+  const aviso=el("div",{cls:"concurso-aviso"});
+
+  const avisoBody=el("div",{cls:"concurso-aviso-body"});
+  avisoBody.appendChild(document.createTextNode("En caso de empate de puntaje, gana quien llegó primero a esa puntuación. El concurso finaliza el 13/06 a las 00:00 hs."));
+  aviso.appendChild(avisoBody);
+  wrap.appendChild(aviso);
+  // ── /AVISO ──
+
+  // Card personal
   if(S.me){
     const myPos=sorted.findIndex(p=>p.id===S.me.id)+1;
-    const card=el("div",{style:{background:"linear-gradient(135deg,rgba(201,169,110,.08),rgba(201,169,110,.03))",border:"1px solid rgba(201,169,110,.28)",borderLeft:"3px solid #c9a96e",borderRadius:"16px",padding:"18px 18px",marginTop:"16px",width:"100%"}});
+    const card=el("div",{style:{background:"linear-gradient(135deg,rgba(201,169,110,.08),rgba(201,169,110,.03))",border:"1px solid rgba(201,169,110,.28)",borderLeft:"3px solid #c9a96e",borderRadius:"16px",padding:"18px 18px",marginTop:"4px",width:"100%"}});
     card.appendChild(el("div",{style:{fontSize:"10px",letterSpacing:"2px",textTransform:"uppercase",color:"var(--gold)",marginBottom:"12px"}},"Tu posición"));
-
-    // Name + position + points
     const top=el("div",{style:{display:"flex",alignItems:"center",justifyContent:"space-between",marginBottom:"14px"}});
     const left=el("div",{});
     const nameRow=el("div",{style:{display:"flex",alignItems:"center",gap:"6px"}});
@@ -554,20 +360,14 @@ function rankingView(){
     const right=el("div",{style:{textAlign:"right"}});
     right.appendChild(el("div",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:"30px",fontWeight:"600",color:"var(--gold)"}},String(S.me.puntos||0)));
     right.appendChild(el("div",{style:{fontSize:"10px",color:"var(--soft)"}},"puntos"));
-    top.appendChild(right);
-    card.appendChild(top);
-
-    // Afiliados
+    top.appendChild(right);card.appendChild(top);
     const afils=S.me.afiliados||[];
     if(afils.length){
       const afilSection=el("div",{style:{borderTop:"1px solid rgba(201,169,110,.15)",paddingTop:"12px"}});
       afilSection.appendChild(el("div",{style:{fontSize:"11px",color:"var(--soft)",marginBottom:"8px"}},String(afils.length)+" afiliado"+(afils.length!==1?"s":"")+" confirmado"+(afils.length!==1?"s":"")));
       const pills=el("div",{style:{display:"flex",flexWrap:"wrap",gap:"6px"}});
-      afils.forEach(a=>{
-        pills.appendChild(el("span",{style:{background:"rgba(201,169,110,.08)",border:"0.5px solid rgba(201,169,110,.2)",borderRadius:"20px",padding:"3px 10px",fontSize:"11px",color:"var(--mid)"}},a));
-      });
-      afilSection.appendChild(pills);
-      card.appendChild(afilSection);
+      afils.forEach(a=>{pills.appendChild(el("span",{style:{background:"rgba(201,169,110,.08)",border:"0.5px solid rgba(201,169,110,.2)",borderRadius:"20px",padding:"3px 10px",fontSize:"11px",color:"var(--mid)"}},a))});
+      afilSection.appendChild(pills);card.appendChild(afilSection);
     }
     wrap.appendChild(card);
   }
@@ -583,130 +383,67 @@ function rankingView(){
     const linkText=el("div",{style:{fontSize:"11px",color:"var(--soft)",wordBreak:"break-all",marginBottom:"12px",lineHeight:"1.5",background:"rgba(255,255,255,.6)",padding:"8px 10px",borderRadius:"8px"}},refLink);
     linkBox.appendChild(linkText);
     const copyBtn=el("button",{cls:"btn-confirm-active",style:{width:"100%",padding:"15px",fontSize:"15px",fontWeight:"600",letterSpacing:".5px"}},"📋  Copiar mi link y compartir");
-    copyBtn.addEventListener("click",()=>{
-      navigator.clipboard.writeText(refLink);
-      copyBtn.textContent="✓  ¡Link copiado!";
-      setTimeout(()=>copyBtn.textContent="📋  Copiar mi link y compartir",2500);
-    });
-    linkBox.appendChild(copyBtn);
-    wrap.appendChild(linkBox);
+    copyBtn.addEventListener("click",()=>{navigator.clipboard.writeText(refLink);copyBtn.textContent="✓  ¡Link copiado!";setTimeout(()=>copyBtn.textContent="📋  Copiar mi link y compartir",2500)});
+    linkBox.appendChild(copyBtn);wrap.appendChild(linkBox);
   }
 
-  // Botones
   const actions=el("div",{cls:"rank-actions",style:{marginTop:"12px"}});
-  if(!S.me){
-    const joinBtn=el("button",{cls:"btn-primary"},"Participar");
-    joinBtn.addEventListener("click",()=>set({page:"register",regStep:1}));
-    actions.appendChild(joinBtn);
-  }
+  if(!S.me){const joinBtn=el("button",{cls:"btn-primary"},"Participar");joinBtn.addEventListener("click",()=>set({page:"register",regStep:1}));actions.appendChild(joinBtn)}
   const refBtn=el("button",{cls:"btn-actualizar",style:{width:"100%",maxWidth:"440px",padding:"14px",borderRadius:"var(--r-xl)",border:"none",background:"linear-gradient(135deg,#c9a96e,#a07840)",color:"#fff",fontSize:"14px",fontWeight:"500",cursor:"pointer",fontFamily:"'DM Sans',sans-serif",letterSpacing:".3px",transition:"opacity .2s"}},"Actualizar ranking");
-  refBtn.addEventListener("click",async()=>{
-    refBtn.textContent="Actualizando…";refBtn.style.opacity=".7";
-    try{
-      const all=await sbGet("?order=puntos.desc");
-      const myId=localStorage.getItem("halime_my_id");
-      const me=myId?all.find(p=>String(p.id)===myId)||S.me:S.me;
-      set({all,me});
-    } catch{refBtn.textContent="Actualizar ranking";refBtn.style.opacity="1";toast("Error al actualizar.")}
-  });
-  actions.appendChild(refBtn);
-  wrap.appendChild(actions);
-
+  refBtn.addEventListener("click",async()=>{refBtn.textContent="Actualizando…";refBtn.style.opacity=".7";try{const all=await sbGet("?order=puntos.desc");const myId=localStorage.getItem("halime_my_id");const me=myId?all.find(p=>String(p.id)===myId)||S.me:S.me;set({all,me})}catch{refBtn.textContent="Actualizar ranking";refBtn.style.opacity="1";toast("Error al actualizar.")}});
+  actions.appendChild(refBtn);wrap.appendChild(actions);
   const backBtn=el("button",{cls:"btn-secondary",style:{width:"100%",maxWidth:"440px",marginTop:"8px"}},"← Inicio");
   backBtn.addEventListener("click",()=>set({page:"landing"}));
   wrap.appendChild(backBtn);
-
   return wrap;
 }
 
 function historyView(){
   const wrap=el("div",{style:{width:"100%",maxWidth:"440px"}});
   wrap.appendChild(el("h2",{cls:"hist-title"},"Mi historial"));
-
-  if(!S.me){
-    wrap.appendChild(el("p",{cls:"hist-sub"},"Registrate para ver tu historial de actividad."));
-    const btn=el("button",{cls:"btn-primary"},"Registrarme");
-    btn.addEventListener("click",()=>set({page:"register"}));
-    wrap.appendChild(btn);
-    return wrap;
-  }
-
+  if(!S.me){wrap.appendChild(el("p",{cls:"hist-sub"},"Registrate para ver tu historial de actividad."));const btn=el("button",{cls:"btn-primary"},"Registrarme");btn.addEventListener("click",()=>set({page:"register"}));wrap.appendChild(btn);return wrap}
   wrap.appendChild(el("p",{cls:"hist-sub"},S.me.nombre+" "+S.me.apellido+" · "+String(S.me.puntos||0)+" puntos totales"));
-
-  // My vote
   const myItem=el("div",{cls:"hist-item"});
   myItem.appendChild(el("div",{cls:"hist-icon vote"},"⭐"));
   const mb=el("div",{cls:"hist-body"});
   mb.appendChild(el("div",{cls:"hist-label"},"Tu voto en Google"));
   mb.appendChild(el("div",{cls:"hist-date"},new Date(S.me.ts||Date.now()).toLocaleDateString("es-AR")));
-  myItem.appendChild(mb);
-  myItem.appendChild(el("div",{cls:"hist-pts"},"+1 pt"));
-  wrap.appendChild(myItem);
-
-  // Afiliados
-  (S.me.afiliados||[]).forEach(a=>{
-    const item=el("div",{cls:"hist-item"});
-    item.appendChild(el("div",{cls:"hist-icon afil"},"👤"));
-    const b=el("div",{cls:"hist-body"});
-    b.appendChild(el("div",{cls:"hist-label"},"Afiliado: "+a));
-    b.appendChild(el("div",{cls:"hist-date"},new Date(S.me.ts||Date.now()).toLocaleDateString("es-AR")));
-    item.appendChild(b);
-    item.appendChild(el("div",{cls:"hist-pts"},"+1 pt"));
-    wrap.appendChild(item);
-  });
-
+  myItem.appendChild(mb);myItem.appendChild(el("div",{cls:"hist-pts"},"+1 pt"));wrap.appendChild(myItem);
+  (S.me.afiliados||[]).forEach(a=>{const item=el("div",{cls:"hist-item"});item.appendChild(el("div",{cls:"hist-icon afil"},"👤"));const b=el("div",{cls:"hist-body"});b.appendChild(el("div",{cls:"hist-label"},"Afiliado: "+a));b.appendChild(el("div",{cls:"hist-date"},new Date(S.me.ts||Date.now()).toLocaleDateString("es-AR")));item.appendChild(b);item.appendChild(el("div",{cls:"hist-pts"},"+1 pt"));wrap.appendChild(item)});
   const addBtn=el("button",{cls:"btn-primary",style:{marginTop:"16px"}},"+ Agregar más afiliados");
-  addBtn.addEventListener("click",pageAddAfiliados);
-  wrap.appendChild(addBtn);
+  addBtn.addEventListener("click",pageAddAfiliados);wrap.appendChild(addBtn);
   return wrap;
 }
 
-// ── ADD AFILIADOS (inline modal-like) ─────────────────────────────────────────
 function pageAddAfiliados(){
   const page=el("div",{cls:"page"});
   page.appendChild(logoHeader());
   page.appendChild(el("h2",{cls:"reg-title"},"Agregar afiliados"));
   page.appendChild(el("p",{cls:"reg-sub"},"Agregá más personas que votaron en Google por vos."));
-
   const card=el("div",{cls:"card"});
   card.appendChild(el("div",{cls:"section-title"},"Nuevos afiliados"));
-
   const newAfils=[""];
   const list=el("div",{});
-
   function renderNew(){
     list.innerHTML="";
     newAfils.forEach((val,i)=>{
       const row=el("div",{cls:"afiliado-row"});
       row.appendChild(el("span",{cls:"afiliado-num"},String((S.me.afiliados||[]).length+i+1)));
       const inp=el("input",{cls:"finp",type:"text",placeholder:"Nombre y apellido"});
-      inp.value=val;
-      inp.addEventListener("input",ev=>newAfils[i]=ev.target.value);
-      row.appendChild(inp);
-      if(newAfils.length>1){
-        const del=el("button",{cls:"btn-del"},"×");
-        del.addEventListener("click",()=>{newAfils.splice(i,1);renderNew()});
-        row.appendChild(del);
-      }
+      inp.value=val;inp.addEventListener("input",ev=>newAfils[i]=ev.target.value);row.appendChild(inp);
+      if(newAfils.length>1){const del=el("button",{cls:"btn-del"},"×");del.addEventListener("click",()=>{newAfils.splice(i,1);renderNew()});row.appendChild(del)}
       list.appendChild(row);
     });
     setTimeout(()=>{const inps=list.querySelectorAll(".finp");if(inps.length)inps[inps.length-1].focus()},30);
   }
-  renderNew();
-  card.appendChild(list);
-
+  renderNew();card.appendChild(list);
   const addMore=el("button",{cls:"btn-add"},"+ Agregar otra persona");
-  addMore.addEventListener("click",()=>{newAfils.push("");renderNew()});
-  card.appendChild(addMore);
-
+  addMore.addEventListener("click",()=>{newAfils.push("");renderNew()});card.appendChild(addMore);
   const saveBtn=el("button",{cls:"btn-primary",style:{marginTop:"20px"}},"Guardar y ver ranking");
   saveBtn.addEventListener("click",async()=>{
     const validos=newAfils.filter(a=>a.trim());
     if(!validos.length){toast("Ingresá al menos un afiliado.");return}
-    for(const a of validos){
-      const parts=a.trim().split(" ");
-      if(parts.length<2||!parts[1].trim()){toast("Cada afiliado necesita nombre y apellido.");return}
-    }
+    for(const a of validos){const parts=a.trim().split(" ");if(parts.length<2||!parts[1].trim()){toast("Cada afiliado necesita nombre y apellido.");return}}
     saveBtn.textContent="Guardando…";saveBtn.disabled=true;
     try{
       const updAfils=[...(S.me.afiliados||[]),...validos];
@@ -714,316 +451,113 @@ function pageAddAfiliados(){
       await sbUpdate(S.me.id,{afiliados:updAfils,puntos:updPts});
       const all=await sbGet("?order=id.asc");
       const me={...S.me,afiliados:updAfils,puntos:updPts};
-      // Update me in all array
       const allUpd=all.map(p=>p.id===me.id?me:p);
       set({me,all:allUpd,page:"ranking",tab:"ranking"});
-      toast("¡Afiliados agregados!");
-      setTimeout(launchConfetti, 200);
-    } catch(e){
-      saveBtn.textContent="Guardar y ver ranking";
-      saveBtn.disabled=false;
-      toast("Error: "+e.message);
-    }
+      toast("¡Afiliados agregados!");setTimeout(launchConfetti,200);
+    } catch(e){saveBtn.textContent="Guardar y ver ranking";saveBtn.disabled=false;toast("Error: "+e.message)}
   });
   card.appendChild(saveBtn);
-
   const back=el("button",{cls:"btn-secondary"},"← Cancelar");
   back.addEventListener("click",()=>set({page:"ranking",tab:"ranking"}));
-  card.appendChild(back);
-
-  page.appendChild(card);
-  document.getElementById("root").innerHTML="";
-  document.getElementById("root").appendChild(page);
+  card.appendChild(back);page.appendChild(card);
+  document.getElementById("root").innerHTML="";document.getElementById("root").appendChild(page);
 }
 
-
-// ── ADMIN LOGIN ───────────────────────────────────────────────────────────────
 function pageAdminLogin(){
   const page=el("div",{cls:"page"});
   page.appendChild(logoHeader());
   const card=el("div",{cls:"card",style:{maxWidth:"320px",textAlign:"center"}});
   card.appendChild(el("h2",{style:{fontFamily:"'Cormorant Garamond',serif",fontSize:"24px",fontWeight:"500",marginBottom:"4px"}},"Panel Concurso"));
   card.appendChild(el("p",{style:{fontSize:"12px",color:"var(--soft)",marginBottom:"20px"}},"Acceso exclusivo para el equipo"));
-
   const inp=el("input",{cls:"finp",type:"password",placeholder:"Contraseña"});
   card.appendChild(inp);
-
-  if(S.adminPassErr){
-    const err=el("p",{style:{fontSize:"12px",color:"var(--rose)",marginTop:"6px"}},"⚠ Contraseña incorrecta");
-    card.appendChild(err);
-  }
-
-  async function doLogin(){
-    if(inp.value!=="superpampucha12"){S.adminPassErr=true;R();return}
-    S.adminPassErr=false;
-    try{
-      const all=await sbGet("?order=puntos.desc");
-      set({page:"admin",adminAuth:true,all,adminPass:""});
-    } catch(e){toast("Error al cargar datos.")}
-  }
-
+  if(S.adminPassErr){const err=el("p",{style:{fontSize:"12px",color:"var(--rose)",marginTop:"6px"}},"⚠ Contraseña incorrecta");card.appendChild(err)}
+  async function doLogin(){if(inp.value!=="superpampucha12"){S.adminPassErr=true;R();return}S.adminPassErr=false;try{const all=await sbGet("?order=puntos.desc");set({page:"admin",adminAuth:true,all,adminPass:""})}catch(e){toast("Error al cargar datos.")}}
   const btn=el("button",{cls:"btn-primary",style:{marginTop:"12px"}},"Ingresar");
-  btn.addEventListener("click",doLogin);
-  inp.addEventListener("keydown",ev=>{if(ev.key==="Enter")doLogin()});
-  setTimeout(()=>inp.focus(),50);
-  card.appendChild(btn);
-  page.appendChild(card);
-  return page;
+  btn.addEventListener("click",doLogin);inp.addEventListener("keydown",ev=>{if(ev.key==="Enter")doLogin()});
+  setTimeout(()=>inp.focus(),50);card.appendChild(btn);page.appendChild(card);return page;
 }
 
-// ── ADMIN PANEL ───────────────────────────────────────────────────────────────
 function pageAdmin(){
   const sorted=[...S.all].sort((a,b)=>(b.puntos||0)-(a.puntos||0));
   const totalAfils=sorted.reduce((s,p)=>(p.afiliados||[]).length+s,0);
-
-  function csv(){
-    const cols=["Posición","Nombre","Apellido","Puntos","Afiliados","Fecha"];
-    const rows=sorted.map((p,i)=>[
-      i+1,p.nombre,p.apellido,p.puntos||0,
-      (p.afiliados||[]).join(" | "),
-      p.ts?new Date(p.ts).toLocaleDateString("es-AR"):""
-    ]);
-    const csvRows=[cols.join(","),...rows.map(r=>r.join(","))];const blob=new Blob(["\uFEFF"+csvRows.join("\n")],{type:"text/csv;charset=utf-8;"});
-    const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="concurso_halime.csv";a.click();
-  }
-
-  async function refresh(){
-    try{const all=await sbGet("?order=puntos.desc");set({all})}
-    catch{toast("Error al actualizar.")}
-  }
-
+  function csv(){const cols=["Posición","Nombre","Apellido","Puntos","Afiliados","Fecha"];const rows=sorted.map((p,i)=>[i+1,p.nombre,p.apellido,p.puntos||0,(p.afiliados||[]).join(" | "),p.ts?new Date(p.ts).toLocaleDateString("es-AR"):""]);const csvRows=[cols.join(","),...rows.map(r=>r.join(","))];const blob=new Blob(["\uFEFF"+csvRows.join("\n")],{type:"text/csv;charset=utf-8;"});const a=document.createElement("a");a.href=URL.createObjectURL(blob);a.download="concurso_halime.csv";a.click()}
+  async function refresh(){try{const all=await sbGet("?order=puntos.desc");set({all})}catch{toast("Error al actualizar.")}}
   const page=el("div",{cls:"adm-page"});
-
-  // Header
   const hdr=el("div",{cls:"adm-hdr"});
   const hl=el("div",{cls:"adm-hdr-left"});
   hl.appendChild(el("img",{cls:"adm-logo",src:LOGO,alt:"Halime"}));
-  const ht=el("div",{});
-  ht.appendChild(el("div",{cls:"adm-overtitle"},"Panel Interno"));
-  ht.appendChild(el("div",{cls:"adm-title"},"Concurso Halime"));
-  hl.appendChild(ht);hdr.appendChild(hl);
+  const ht=el("div",{});ht.appendChild(el("div",{cls:"adm-overtitle"},"Panel Interno"));ht.appendChild(el("div",{cls:"adm-title"},"Concurso Halime"));hl.appendChild(ht);hdr.appendChild(hl);
   const hbtns=el("div",{cls:"adm-btns"});
   const rb=el("button",{cls:"adm-btn"},"↻  Actualizar");rb.addEventListener("click",refresh);
   const cb=el("button",{cls:"adm-btn adm-btn-gold"},"⬇  Exportar CSV");cb.addEventListener("click",csv);
   const out=el("button",{cls:"adm-btn"},"Cerrar sesión");out.addEventListener("click",()=>set({page:"landing",adminAuth:false}));
-  hbtns.appendChild(rb);hbtns.appendChild(cb);hbtns.appendChild(out);
-  hdr.appendChild(hbtns);page.appendChild(hdr);
-
+  hbtns.appendChild(rb);hbtns.appendChild(cb);hbtns.appendChild(out);hdr.appendChild(hbtns);page.appendChild(hdr);
   const body=el("div",{cls:"adm-body"});
-
-  // Stats
   const stats=el("div",{cls:"adm-stats"});
-  [[String(sorted.length),"Participantes","#c2607a"],
-   [String(totalAfils),"Afiliados totales","#c9a96e"],
-   [sorted.length?String(sorted[0].nombre+" "+sorted[0].apellido):"—","Líder actual","#9b7fa6"],
-   [sorted.length?String(sorted[0].puntos||0)+" pts":"—","Puntaje líder","#c9a96e"]
-  ].forEach(([v,l,c])=>{
-    const sc=el("div",{cls:"adm-stat"});
-    sc.appendChild(el("div",{cls:"adm-stat-val",style:{color:c}},v));
-    sc.appendChild(el("div",{cls:"adm-stat-lbl"},l));
-    stats.appendChild(sc);
-  });
+  [[String(sorted.length),"Participantes","#c2607a"],[String(totalAfils),"Afiliados totales","#c9a96e"],[sorted.length?String(sorted[0].nombre+" "+sorted[0].apellido):"—","Líder actual","#9b7fa6"],[sorted.length?String(sorted[0].puntos||0)+" pts":"—","Puntaje líder","#c9a96e"]].forEach(([v,l,c])=>{const sc=el("div",{cls:"adm-stat"});sc.appendChild(el("div",{cls:"adm-stat-val",style:{color:c}},v));sc.appendChild(el("div",{cls:"adm-stat-lbl"},l));stats.appendChild(sc)});
   body.appendChild(stats);
-
-  // Participants list
   const sec=el("div",{cls:"adm-section"});
   sec.appendChild(el("div",{cls:"adm-section-title"},"Ranking completo · "+String(sorted.length)+" participantes"));
-
-  if(!sorted.length){
-    sec.appendChild(el("div",{style:{textAlign:"center",padding:"32px",color:"var(--soft)",fontSize:"14px"}},"Aún no hay participantes."));
-  } else {
-    sorted.forEach((p,i)=>{
-      const row=el("div",{cls:"adm-row"});
-      const posClass=i===0?"gold":i===1?"silver":i===2?"bronze":"";
-      row.appendChild(el("div",{cls:"adm-pos "+posClass},String(i+1)));
-
-      const info=el("div",{cls:"adm-info"});
-      info.appendChild(el("div",{cls:"adm-name"},p.nombre+" "+p.apellido));
-
-      // Afiliados as pills
-      const afilWrap=el("div",{style:{marginTop:"6px"}});
-      if((p.afiliados||[]).length){
-        (p.afiliados||[]).forEach(a=>{
-          afilWrap.appendChild(el("span",{cls:"adm-afil-item"},"👤 "+a));
-        });
-      } else {
-        afilWrap.appendChild(el("span",{style:{fontSize:"11px",color:"var(--nude-dk)"}},"Sin afiliados"));
-      }
-      info.appendChild(afilWrap);
-      info.appendChild(el("div",{cls:"adm-date"},p.ts?new Date(p.ts).toLocaleDateString("es-AR"):""));
-
-      // Delete button
-      const del=el("button",{cls:"adm-del"},"🗑 Eliminar");
-      del.addEventListener("click",async()=>{
-        if(!confirm("¿Eliminar a "+p.nombre+" "+p.apellido+"? No se puede deshacer."))return;
-        try{
-          await sbDeleteParticipante(p.id);
-          const updated=S.all.filter(x=>x.id!==p.id);
-          set({all:updated});
-          toast("Participante eliminado.");
-        } catch{toast("Error al eliminar.")}
-      });
-      info.appendChild(del);
-
-      const editBtn=el("button",{cls:"adm-edit"},"✏ Editar afiliados");
-      editBtn.addEventListener("click",()=>showEditModal(p));
-      info.appendChild(editBtn);
-      row.appendChild(info);
-
-      const pts=el("div",{cls:"adm-pts"});
-      pts.appendChild(el("div",{cls:"adm-pts-val"},String(p.puntos||0)));
-      pts.appendChild(el("div",{cls:"adm-pts-lbl"},"puntos"));
-      row.appendChild(pts);
-      sec.appendChild(row);
-    });
-  }
-  body.appendChild(sec);
-  body.appendChild(el("div",{style:{height:"32px"}}));
-  page.appendChild(body);
-  return page;
+  if(!sorted.length){sec.appendChild(el("div",{style:{textAlign:"center",padding:"32px",color:"var(--soft)",fontSize:"14px"}},"Aún no hay participantes."))}
+  else{sorted.forEach((p,i)=>{const row=el("div",{cls:"adm-row"});const posClass=i===0?"gold":i===1?"silver":i===2?"bronze":"";row.appendChild(el("div",{cls:"adm-pos "+posClass},String(i+1)));const info=el("div",{cls:"adm-info"});info.appendChild(el("div",{cls:"adm-name"},p.nombre+" "+p.apellido));const afilWrap=el("div",{style:{marginTop:"6px"}});if((p.afiliados||[]).length){(p.afiliados||[]).forEach(a=>{afilWrap.appendChild(el("span",{cls:"adm-afil-item"},"👤 "+a))})}else{afilWrap.appendChild(el("span",{style:{fontSize:"11px",color:"var(--nude-dk)"}},"Sin afiliados"))}info.appendChild(afilWrap);info.appendChild(el("div",{cls:"adm-date"},p.ts?new Date(p.ts).toLocaleDateString("es-AR"):""));const del=el("button",{cls:"adm-del"},"🗑 Eliminar");del.addEventListener("click",async()=>{if(!confirm("¿Eliminar a "+p.nombre+" "+p.apellido+"? No se puede deshacer."))return;try{await sbDeleteParticipante(p.id);const updated=S.all.filter(x=>x.id!==p.id);set({all:updated});toast("Participante eliminado.")}catch{toast("Error al eliminar.")}});info.appendChild(del);const editBtn=el("button",{cls:"adm-edit"},"✏ Editar afiliados");editBtn.addEventListener("click",()=>showEditModal(p));info.appendChild(editBtn);row.appendChild(info);const pts=el("div",{cls:"adm-pts"});pts.appendChild(el("div",{cls:"adm-pts-val"},String(p.puntos||0)));pts.appendChild(el("div",{cls:"adm-pts-lbl"},"puntos"));row.appendChild(pts);sec.appendChild(row)})}
+  body.appendChild(sec);body.appendChild(el("div",{style:{height:"32px"}}));page.appendChild(body);return page;
 }
 
-// ── AFILIADO — Invite Page ───────────────────────────────────────────────────
 function pageRefInvite(){
   const owner=S.refOwner;
   const page=el("div",{cls:"ref-page"});
   page.appendChild(logoHeader());
-
-  // Invite box
   const inv=el("div",{cls:"ref-invite"});
   inv.appendChild(el("div",{cls:"ref-invite-label"},"Te invitaron al concurso"));
   inv.appendChild(el("div",{cls:"ref-invite-name"},owner?owner.nombre+" "+owner.apellido:"Alguien"));
   inv.appendChild(el("div",{cls:"ref-invite-sub"},"te invita a sumarle un punto votando con 5 estrellas en Google."));
   page.appendChild(inv);
-
-  // Steps card
   const card=el("div",{cls:"card"});
   card.appendChild(el("div",{cls:"section-title"},"Cómo participar"));
-
-  // Step 1
-  const s1=el("div",{cls:"step"});
-  s1.appendChild(el("div",{cls:"step-num"},"1"));
-  const t1=el("div",{cls:"step-text"});
-  t1.appendChild(el("strong",{},"Votá en Google — "));
-  t1.appendChild(document.createTextNode("Dejá tu reseña de "));
-  t1.appendChild(el("span",{cls:"stars-highlight"},"5 estrellas ★★★★★"));
-  t1.appendChild(document.createTextNode("."));
-  s1.appendChild(t1);card.appendChild(s1);
-
-  // Step 2
-  const s2=el("div",{cls:"step",style:{marginTop:"12px"}});
-  s2.appendChild(el("div",{cls:"step-num"},"2"));
-  const t2=el("div",{cls:"step-text"});
-  t2.appendChild(el("strong",{},"Confirmá tu voto — "));
-  t2.appendChild(document.createTextNode("Volvé acá y registrá tu nombre."));
-  s2.appendChild(t2);card.appendChild(s2);
-
-  // Google button
+  const s1=el("div",{cls:"step"});s1.appendChild(el("div",{cls:"step-num"},"1"));const t1=el("div",{cls:"step-text"});t1.appendChild(el("strong",{},"Votá en Google — "));t1.appendChild(document.createTextNode("Dejá tu reseña de "));t1.appendChild(el("span",{cls:"stars-highlight"},"5 estrellas ★★★★★"));t1.appendChild(document.createTextNode("."));s1.appendChild(t1);card.appendChild(s1);
+  const s2=el("div",{cls:"step",style:{marginTop:"12px"}});s2.appendChild(el("div",{cls:"step-num"},"2"));const t2=el("div",{cls:"step-text"});t2.appendChild(el("strong",{},"Confirmá tu voto — "));t2.appendChild(document.createTextNode("Volvé acá y registrá tu nombre."));s2.appendChild(t2);card.appendChild(s2);
   const ga=el("a",{cls:"btn-google",href:GOOGLE_URL,target:"_blank",style:{marginTop:"20px"}},"⭐  Votar en Google");
   const voted=localStorage.getItem("halime_ref_voted_"+S.refCode);
-  ga.addEventListener("click",()=>{
-    setTimeout(()=>{
-      localStorage.setItem("halime_ref_voted_"+S.refCode,"1");
-      already.className="btn-confirm-active";
-      already.textContent="✓  Confirmar mi voto";
-      already.disabled=false;
-      already.style.marginTop="10px";
-    },800);
-  });
+  ga.addEventListener("click",()=>{setTimeout(()=>{localStorage.setItem("halime_ref_voted_"+S.refCode,"1");already.className="btn-confirm-active";already.textContent="✓  Confirmar mi voto";already.disabled=false;already.style.marginTop="10px"},800)});
   card.appendChild(ga);
-
-  // Register button
   const already=el("button",{cls:voted?"btn-confirm-active":"btn-secondary btn-locked",style:{marginTop:"10px"}},voted?"✓  Confirmar mi voto":"Confirmar mi voto");
-  already.disabled=!voted;
-  if(!voted)already.title="Primero votá en Google";
-  already.addEventListener("click",()=>{
-    if(!localStorage.getItem("halime_ref_voted_"+S.refCode))return;
-    set({page:"ref-register"});
-  });
-  card.appendChild(already);
-  page.appendChild(card);
-  return page;
+  already.disabled=!voted;if(!voted)already.title="Primero votá en Google";
+  already.addEventListener("click",()=>{if(!localStorage.getItem("halime_ref_voted_"+S.refCode))return;set({page:"ref-register"})});
+  card.appendChild(already);page.appendChild(card);return page;
 }
 
-// ── AFILIADO — Register Page ──────────────────────────────────────────────────
 function pageRefRegister(){
   const page=el("div",{cls:"ref-page"});
   page.appendChild(logoHeader());
-
   const card=el("div",{cls:"card"});
   card.appendChild(el("h2",{cls:"reg-title"},"Confirmá tu voto"));
   card.appendChild(el("p",{cls:"reg-sub"},"Ingresá tu nombre completo para registrar tu punto."));
   card.appendChild(el("div",{cls:"section-title"},"Tus datos"));
-
   const LF={nombre:"",apellido:""};
-
-  const fgN=el("div",{cls:"fg"});
-  fgN.appendChild(el("label",{cls:"flabel"},"Tu nombre"));
-  const inpN=el("input",{cls:"finp",type:"text",placeholder:"Nombre"});
-  inpN.addEventListener("input",ev=>LF.nombre=ev.target.value);
-  fgN.appendChild(inpN);card.appendChild(fgN);
-
-  const fgA=el("div",{cls:"fg"});
-  fgA.appendChild(el("label",{cls:"flabel"},"Tu apellido"));
-  const inpA=el("input",{cls:"finp",type:"text",placeholder:"Apellido"});
-  inpA.addEventListener("input",ev=>LF.apellido=ev.target.value);
-  fgA.appendChild(inpA);card.appendChild(fgA);
-
+  const fgN=el("div",{cls:"fg"});fgN.appendChild(el("label",{cls:"flabel"},"Tu nombre"));const inpN=el("input",{cls:"finp",type:"text",placeholder:"Nombre"});inpN.addEventListener("input",ev=>LF.nombre=ev.target.value);fgN.appendChild(inpN);card.appendChild(fgN);
+  const fgA=el("div",{cls:"fg"});fgA.appendChild(el("label",{cls:"flabel"},"Tu apellido"));const inpA=el("input",{cls:"finp",type:"text",placeholder:"Apellido"});inpA.addEventListener("input",ev=>LF.apellido=ev.target.value);fgA.appendChild(inpA);card.appendChild(fgA);
   const btn=el("button",{cls:"btn-primary",style:{marginTop:"20px"}},"Registrar mi voto");
   btn.addEventListener("click",async()=>{
     if(!LF.nombre.trim()||!LF.apellido.trim()){toast("Ingresá tu nombre y apellido.");return}
     btn.textContent="Guardando…";btn.disabled=true;
     try{
-      // Add afiliado to owner's record
-      const owner=S.refOwner;
-      const afilName=LF.nombre.trim()+" "+LF.apellido.trim();
-      const afilNomLow=LF.nombre.trim().toLowerCase();
-      const afilApeLow=LF.apellido.trim().toLowerCase();
-
-      // Check duplicate: same nombre+apellido in any participant or afiliado list
+      const owner=S.refOwner;const afilName=LF.nombre.trim()+" "+LF.apellido.trim();const afilNomLow=LF.nombre.trim().toLowerCase();const afilApeLow=LF.apellido.trim().toLowerCase();
       const allParts=await sbGet("?order=id.asc");
-
-      // Check if already a base participant
-      const isDupBase=allParts.find(p=>
-        p.nombre.toLowerCase()===afilNomLow && p.apellido.toLowerCase()===afilApeLow
-      );
-      if(isDupBase){
-        btn.textContent="Registrar mi voto";btn.disabled=false;
-        toast("Este nombre ya está registrado como participante.");return;
-      }
-
-      // Check if already an afiliado of anyone
-      const isDupAfil=allParts.find(p=>
-        (p.afiliados||[]).some(a=>{
-          const parts=a.trim().split(" ");
-          const aNom=parts[0]?.toLowerCase()||"";
-          const aApe=parts.slice(1).join(" ").toLowerCase()||"";
-          return aNom===afilNomLow && aApe===afilApeLow;
-        })
-      );
-      if(isDupAfil){
-        btn.textContent="Registrar mi voto";btn.disabled=false;
-        toast("Este nombre ya confirmó su voto anteriormente.");return;
-      }
-
-      const updAfils=[...(owner.afiliados||[]),afilName];
-      const updPts=1+updAfils.length;
+      const isDupBase=allParts.find(p=>p.nombre.toLowerCase()===afilNomLow&&p.apellido.toLowerCase()===afilApeLow);
+      if(isDupBase){btn.textContent="Registrar mi voto";btn.disabled=false;toast("Este nombre ya está registrado como participante.");return}
+      const isDupAfil=allParts.find(p=>(p.afiliados||[]).some(a=>{const parts=a.trim().split(" ");const aNom=parts[0]?.toLowerCase()||"";const aApe=parts.slice(1).join(" ").toLowerCase()||"";return aNom===afilNomLow&&aApe===afilApeLow}));
+      if(isDupAfil){btn.textContent="Registrar mi voto";btn.disabled=false;toast("Este nombre ya confirmó su voto anteriormente.");return}
+      const updAfils=[...(owner.afiliados||[]),afilName];const updPts=1+updAfils.length;
       await sbUpdate(owner.id,{afiliados:updAfils,puntos:updPts});
       localStorage.setItem("halime_ref_done_"+S.refCode,"1");
       set({page:"ref-done",refOwner:{...owner,afiliados:updAfils,puntos:updPts}});
       setTimeout(launchConfetti,200);
-    } catch(e){
-      btn.textContent="Registrar mi voto";
-      btn.disabled=false;
-      toast("Error: "+e.message);
-    }
+    } catch(e){btn.textContent="Registrar mi voto";btn.disabled=false;toast("Error: "+e.message)}
   });
-  card.appendChild(btn);
-  page.appendChild(card);
-  return page;
+  card.appendChild(btn);page.appendChild(card);return page;
 }
 
-// ── AFILIADO — Done Page ──────────────────────────────────────────────────────
 function pageRefDone(){
   const owner=S.refOwner;
   const page=el("div",{cls:"ref-done"});
@@ -1035,82 +569,38 @@ function pageRefDone(){
   sub.appendChild(document.createTextNode("Tu voto fue registrado y sumó "));
   sub.appendChild(el("strong",{},"1 punto"));
   sub.appendChild(document.createTextNode(" para "+(owner?owner.nombre+" "+owner.apellido:"tu amiga")+". ¡Muchas gracias por participar!"));
-  inner.appendChild(sub);
-  page.appendChild(inner);
-  return page;
+  inner.appendChild(sub);page.appendChild(inner);return page;
 }
 
-// ── Confetti ─────────────────────────────────────────────────────────────────
 function launchConfetti(){
   const colors=["#c9a96e","#c2607a","#f5c4b3","#e8a0bb","#fff","#f5ede0","#e0d4c8"];
-  for(let i=0;i<120;i++){
-    const el=document.createElement("div");
-    el.className="confetti-piece";
-    el.style.left=Math.random()*100+"vw";
-    el.style.background=colors[Math.floor(Math.random()*colors.length)];
-    el.style.width=(6+Math.random()*8)+"px";
-    el.style.height=(6+Math.random()*8)+"px";
-    el.style.borderRadius=Math.random()>0.5?"50%":"2px";
-    el.style.animationDuration=(1.5+Math.random()*2.5)+"s";
-    el.style.animationDelay=(Math.random()*1.2)+"s";
-    document.body.appendChild(el);
-    el.addEventListener("animationend",()=>el.remove());
-  }
+  for(let i=0;i<120;i++){const el=document.createElement("div");el.className="confetti-piece";el.style.left=Math.random()*100+"vw";el.style.background=colors[Math.floor(Math.random()*colors.length)];el.style.width=(6+Math.random()*8)+"px";el.style.height=(6+Math.random()*8)+"px";el.style.borderRadius=Math.random()>0.5?"50%":"2px";el.style.animationDuration=(1.5+Math.random()*2.5)+"s";el.style.animationDelay=(Math.random()*1.2)+"s";document.body.appendChild(el);el.addEventListener("animationend",()=>el.remove())}
 }
 
-// ── Admin Edit Afiliados Modal ────────────────────────────────────────────────
 function showEditModal(p){
-  const existing=document.getElementById("_edit_modal");
-  if(existing)existing.remove();
+  const existing=document.getElementById("_edit_modal");if(existing)existing.remove();
   const afils=[...(p.afiliados||[])];
-  const overlay=document.createElement("div");
-  overlay.className="modal-overlay";overlay.id="_edit_modal";
+  const overlay=document.createElement("div");overlay.className="modal-overlay";overlay.id="_edit_modal";
   const card=document.createElement("div");card.className="modal-card";
-  const title=document.createElement("div");title.className="modal-title";
-  title.textContent="Editar afiliados";card.appendChild(title);
+  const title=document.createElement("div");title.className="modal-title";title.textContent="Editar afiliados";card.appendChild(title);
   const sub=document.createElement("div");sub.className="modal-sub";
-  function updateSub(){sub.textContent=p.nombre+" "+p.apellido+" · "+afils.length+" afiliado"+(afils.length!==1?"s":"");}
+  function updateSub(){sub.textContent=p.nombre+" "+p.apellido+" · "+afils.length+" afiliado"+(afils.length!==1?"s":"")}
   updateSub();card.appendChild(sub);
   const listEl=document.createElement("div");
-  function renderList(){
-    listEl.innerHTML="";
-    afils.forEach((a,i)=>{
-      const row=document.createElement("div");row.className="modal-afil-row";
-      const inp=document.createElement("input");inp.className="modal-afil-inp";inp.value=a;
-      inp.addEventListener("input",ev=>{afils[i]=ev.target.value;});
-      const del=document.createElement("button");del.className="modal-afil-del";del.textContent="×";
-      del.addEventListener("click",()=>{afils.splice(i,1);renderList();updateSub();});
-      row.appendChild(inp);row.appendChild(del);listEl.appendChild(row);
-    });
-  }
+  function renderList(){listEl.innerHTML="";afils.forEach((a,i)=>{const row=document.createElement("div");row.className="modal-afil-row";const inp=document.createElement("input");inp.className="modal-afil-inp";inp.value=a;inp.addEventListener("input",ev=>{afils[i]=ev.target.value});const del=document.createElement("button");del.className="modal-afil-del";del.textContent="×";del.addEventListener("click",()=>{afils.splice(i,1);renderList();updateSub()});row.appendChild(inp);row.appendChild(del);listEl.appendChild(row)})}
   renderList();card.appendChild(listEl);
-  const addBtn=document.createElement("button");addBtn.className="modal-add";addBtn.textContent="+ Agregar afiliado";
-  addBtn.addEventListener("click",()=>{afils.push("");renderList();updateSub();});
-  card.appendChild(addBtn);
+  const addBtn=document.createElement("button");addBtn.className="modal-add";addBtn.textContent="+ Agregar afiliado";addBtn.addEventListener("click",()=>{afils.push("");renderList();updateSub()});card.appendChild(addBtn);
   const btns=document.createElement("div");btns.className="modal-btns";
-  const cancelBtn=document.createElement("button");cancelBtn.className="modal-cancel";cancelBtn.textContent="Cancelar";
-  cancelBtn.addEventListener("click",()=>overlay.remove());
+  const cancelBtn=document.createElement("button");cancelBtn.className="modal-cancel";cancelBtn.textContent="Cancelar";cancelBtn.addEventListener("click",()=>overlay.remove());
   const saveBtn=document.createElement("button");saveBtn.className="modal-save";saveBtn.textContent="Guardar cambios";
-  saveBtn.addEventListener("click",async()=>{
-    const validAfils=afils.map(a=>a.trim()).filter(a=>a);
-    saveBtn.textContent="Guardando…";saveBtn.disabled=true;
-    try{
-      const newPts=1+validAfils.length;
-      await sbUpdate(p.id,{afiliados:validAfils,puntos:newPts});
-      const updated=S.all.map(x=>x.id===p.id?{...x,afiliados:validAfils,puntos:newPts}:x);
-      set({all:updated});overlay.remove();toast("Afiliados actualizados.");
-    } catch(e){saveBtn.textContent="Guardar cambios";saveBtn.disabled=false;toast("Error: "+e.message);}
-  });
+  saveBtn.addEventListener("click",async()=>{const validAfils=afils.map(a=>a.trim()).filter(a=>a);saveBtn.textContent="Guardando…";saveBtn.disabled=true;try{const newPts=1+validAfils.length;await sbUpdate(p.id,{afiliados:validAfils,puntos:newPts});const updated=S.all.map(x=>x.id===p.id?{...x,afiliados:validAfils,puntos:newPts}:x);set({all:updated});overlay.remove();toast("Afiliados actualizados.")}catch(e){saveBtn.textContent="Guardar cambios";saveBtn.disabled=false;toast("Error: "+e.message)}});
   btns.appendChild(cancelBtn);btns.appendChild(saveBtn);card.appendChild(btns);
-  overlay.appendChild(card);
-  overlay.addEventListener("click",ev=>{if(ev.target===overlay)overlay.remove();});
+  overlay.appendChild(card);overlay.addEventListener("click",ev=>{if(ev.target===overlay)overlay.remove()});
   document.body.appendChild(overlay);
 }
 
-// ── Router ────────────────────────────────────────────────────────────────────
 function R(){
-  const root=document.getElementById("root");
-  root.innerHTML="";
+  const root=document.getElementById("root");root.innerHTML="";
   if(S.page==="landing")root.appendChild(pageLanding());
   else if(S.page==="register")root.appendChild(pageRegister());
   else if(S.page==="ranking")root.appendChild(pageRanking());
@@ -1122,47 +612,20 @@ function R(){
 }
 
 async function initRoute(){
-  const hash=window.location.hash;
-  const params=new URLSearchParams(window.location.search);
-  const refCode=params.get("ref");
-
-  if(hash==="#admin"){S.page="admin-login";R();return;}
-
-  // Afiliado flow — came via ref link
+  const hash=window.location.hash;const params=new URLSearchParams(window.location.search);const refCode=params.get("ref");
+  if(hash==="#admin"){S.page="admin-login";R();return}
   if(refCode){
     S.refCode=refCode;
-    // Check if already done
-    if(localStorage.getItem("halime_ref_done_"+refCode)){
-      S.page="ref-done";R();return;
-    }
-    try{
-      const owner=await sbGetByRef(refCode);
-      if(owner){
-        S.refOwner=owner;
-        S.page="ref-invite";
-        R();return;
-      }
-    } catch(e){/* fall through to landing */}
+    if(localStorage.getItem("halime_ref_done_"+refCode)){S.page="ref-done";R();return}
+    try{const owner=await sbGetByRef(refCode);if(owner){S.refOwner=owner;S.page="ref-invite";R();return}}catch(e){}
   }
-
-  // Normal flow
   if(localStorage.getItem("halime_registered")){
-    try{
-      const all=await sbGet("?order=puntos.desc");
-      const myId=localStorage.getItem("halime_my_id");
-      const me=myId?all.find(p=>String(p.id)===myId)||null:null;
-      S.all=all;if(me)S.me=me;
-    } catch(e){/* offline */}
+    try{const all=await sbGet("?order=puntos.desc");const myId=localStorage.getItem("halime_my_id");const me=myId?all.find(p=>String(p.id)===myId)||null:null;S.all=all;if(me)S.me=me}catch(e){}
   }
   R();
 }
-window.addEventListener("hashchange",()=>{
-  if(window.location.hash==="#admin"&&S.page!=="admin"&&S.page!=="admin-login"){
-    S.page="admin-login";R();
-  }
-});
+window.addEventListener("hashchange",()=>{if(window.location.hash==="#admin"&&S.page!=="admin"&&S.page!=="admin-login"){S.page="admin-login";R()}});
 initRoute();
-
 </script>
 </body>
 </html>
